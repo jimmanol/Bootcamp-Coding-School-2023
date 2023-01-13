@@ -74,18 +74,13 @@ namespace Session_04
             Console.WriteLine();
 
 
-           /* // 6. remake program 5 using .NET libraries
+            /* // 6. remake program 5 using .NET libraries
             TimeSpan time = TimeSpan.FromSeconds(seconds);
             string str = time.ToString(@"hh\:mm\:ss\:fff");
-
-
             Console.WriteLine(); */
 
 
 
-
-
-            
             // 7. convert celsius degrees to Kelvin and Fahrenheit.
             float celsius = 24;
             double kelvin = celsius + 273.15;
