@@ -18,8 +18,8 @@ namespace Session_05
         }
 
 
-        public double Product(int r){
-            double prod = 1;
+        public long Product(int r){
+            long prod = 1;
             for (int i = 1; i <= r; i++)
             {
                 prod *= i;
