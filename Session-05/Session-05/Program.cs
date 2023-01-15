@@ -33,6 +33,12 @@
             {
                 Console.WriteLine("The product of the the numbers from 1 to {0} is: {1}\r\n", r, prodsum.Product(r));
             }
+            if (s!=1 && s!=2)
+            {
+                Console.WriteLine("Sorry, Incorrect Input!\r\n");
+            }
+
+            
 
 
             
