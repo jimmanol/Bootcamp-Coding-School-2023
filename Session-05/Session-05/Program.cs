@@ -90,7 +90,7 @@ namespace Session_05
                 Console.Write(len.ToString() + ", ");
             }
 
-            int[] arrC = { arrA.Length * arrB.Length };
+            int[] arrC = new int [ arrA.Length * arrB.Length ];
 
             for (int i = 0; i < arrA.Length; i++) {
                 for (int j = 0; j < arrB.Length; j++) {
@@ -102,7 +102,7 @@ namespace Session_05
             {
                 Console.Write(len.ToString() + ", ");
             }
-
+            Console.WriteLine("\r\n");
 
 
 
@@ -110,13 +110,13 @@ namespace Session_05
             // 5. Sort given Array of integers in ascending order
 
             int[] myArr = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
-            Console.WriteLine("5. The initial array:");
+            Console.WriteLine("5. The initial array is:");
             foreach (int num in myArr)
             {
                 Console.Write(num.ToString() + ", ");
             }
+            Console.WriteLine("");
 
-            
             for (int i = 0; i < myArr.Length - 1; i++)
             {
                 for (int j = 0; j < myArr.Length - (1 + i); j++)
@@ -129,14 +129,14 @@ namespace Session_05
                     }
                 }
             }
-            Console.WriteLine("5. The given array sorted in ascending order: ");
+            Console.WriteLine("The given array sorted in ascending order: ");
             foreach (int num in myArr)
             {
                 Console.Write(num.ToString() + ", ");
             }
 
 
-
+            Console.ReadLine();
         }
     }
  }
