@@ -7,8 +7,9 @@
 
             // 1. Reverse a given string
 
+            string name = "Dimitris Manolas";
             ReverseStr rev = new ReverseStr();
-            Console.WriteLine("1. My name in reverse is : {0}\r\n", rev.PrintRev());
+            Console.WriteLine("1. My name in reverse is : {0}\r\n", rev.PrintRev(name));
 
 
 
@@ -51,9 +52,23 @@
 
             // 4. Multiply each element of one array to the elements of another and display the results in a third array.
 
+            int[] arrA = { 2, 4, 9, 12 };
+            int[] arrB = { 1, 3, 7, 10 };
+            Console.WriteLine("4. The elements of the first two arrays are: ");
+            foreach (int len in arrA)
+            {
+                Console.Write(len.ToString() + ", ");
+            }
+            Console.WriteLine("");
+            foreach (int len in arrB)
+            {
+                Console.Write(len.ToString() + ", ");
+            }
+
             CartesProd cartprod = new CartesProd();
-            
-            foreach (int len in cartprod.CartProd())
+            Console.WriteLine("\r\nThe array produced is: ");
+
+            foreach (int len in cartprod.CartProd(arrA, arrB))
             {
                 Console.Write(len.ToString() + ", ");
             }
@@ -63,9 +78,18 @@
 
             // 5. Sort given Array of integers in ascending order
 
+            int[] myArr = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+            Console.WriteLine("5. The initial array is:");
+            foreach (int num in myArr)
+            {
+                Console.Write(num.ToString() + ", ");
+            }
+            Console.WriteLine("");
+
             AscendSort ascendsort = new AscendSort();
 
-            foreach (int num in ascendsort.BubbleSort())
+            Console.WriteLine("The given array sorted in ascending order: ");
+            foreach (int num in ascendsort.BubbleSort(myArr))
             {
                 Console.Write(num.ToString() + ", ");
             }

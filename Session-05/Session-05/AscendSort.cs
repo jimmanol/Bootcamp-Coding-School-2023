@@ -8,15 +8,7 @@ namespace Session_05
 {
     internal class AscendSort
     {
-        public int[] BubbleSort() {
-            int[] myArr = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
-            Console.WriteLine("5. The initial array is:");
-            foreach (int num in myArr)
-            {
-                Console.Write(num.ToString() + ", ");
-            }
-            Console.WriteLine("");
-
+        public int[] BubbleSort(int[] myArr) {
             for (int i = 0; i < myArr.Length - 1; i++)
             {
                 for (int j = 0; j < myArr.Length - (1 + i); j++)
@@ -29,9 +21,7 @@ namespace Session_05
                     }
                 }
             }
-            Console.WriteLine("The given array sorted in ascending order: ");
             return myArr;
-
         }
     }
 }
