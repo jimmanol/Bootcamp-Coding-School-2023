@@ -6,8 +6,11 @@
         {
 
             // 1. Reverse a given string
+
             ReverseStr rev = new ReverseStr();
             Console.WriteLine("1. My name in reverse is : {0}\r\n", rev.PrintRev());
+
+
 
             // 2. sum or product from 1 to user input
 
@@ -34,7 +37,6 @@
             
             // 3. All prime numbers from 1 to chosen number
 
-
             Console.WriteLine("3. Please enter the range for the prime number search: ");
             string input = Console.ReadLine();
             int n = Convert.ToInt32(input);
@@ -46,6 +48,7 @@
             Console.WriteLine("\r\n");
 
 
+
             // 4. Multiply each element of one array to the elements of another and display the results in a third array.
 
             CartesProd cartprod = new CartesProd();
@@ -55,6 +58,7 @@
                 Console.Write(len.ToString() + ", ");
             }
             Console.WriteLine("\r\n");
+
 
 
             // 5. Sort given Array of integers in ascending order
