@@ -1,4 +1,4 @@
-﻿namespace Session_Test
+﻿namespace Session_05
 {
     internal class Program
     {
