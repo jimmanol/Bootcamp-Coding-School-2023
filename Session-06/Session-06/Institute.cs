@@ -33,11 +33,11 @@ namespace Session_06
             Name = name;
         }
 
-        public Institute(Guid id, string name, int YearsInService)
+        public Institute(Guid id, string name, int yearsInservice)
         {
             ID = id;
             Name = name;
-            YearsInService = YearsInService;
+            YearsInService = yearsInservice;
         }
 
 
