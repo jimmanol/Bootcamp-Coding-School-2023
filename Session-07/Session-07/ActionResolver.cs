@@ -9,7 +9,7 @@ namespace Session_07 {
     public class ActionResolver {
 
         // PROPERTIES
-        public MessageLogger Logger = new MessageLogger();
+        public MessageLogger Logger { get; set; }
          
         // CTOR
         public ActionResolver() {
@@ -48,8 +48,9 @@ namespace Session_07 {
             else {
                 m.Msg = "Not a String";
             }
-            Console.WriteLine(m);
+            
             Logger.Write(m);
+            //Logger.ReadAll();
             response.Output = output;
             
             return response;
@@ -72,7 +73,7 @@ namespace Session_07 {
         public string Conversion(string InputB) {
 
 
-            //string binary = Convert.ToString(Convert.ToInt32(InputB), 2);
+            string binary = Convert.ToString(Convert.ToInt32(InputB), 2);
 
             return InputB;
         }

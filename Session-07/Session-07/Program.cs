@@ -3,12 +3,12 @@
         public static void Main(string[] args) {
 
             Guid id = Guid.NewGuid();
-            string word = "hELLO";
+            string word = "Hello World";
 
             ActionRequest request = new ActionRequest();
             request.RequestID = id;
             request.Input = word;
-            request.Action = ActionRequest.ActionEnum.Convert;
+            request.Action = ActionRequest.ActionEnum.Reverse;
 
 
 
@@ -16,9 +16,13 @@
             ActionResponse response = new ActionResponse();
 
             ActionResolver resolver = new ActionResolver();
+            
+            resolver.Logger = new MessageLogger();
+            resolver.Logger.Messages = Array.Empty<Message>();
 
             response = resolver.Execute(request);
-
+            response = resolver.Execute(request);
+            response = resolver.Execute(request);
 
 
 

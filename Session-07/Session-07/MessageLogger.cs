@@ -9,7 +9,7 @@ namespace Session_07 {
 
         // properties
 
-        public Message[] Messages = Array.Empty<Message>();
+        public Message[] Messages { get; set; }
 
 
         // methods
@@ -20,14 +20,15 @@ namespace Session_07 {
                 Console.WriteLine(Msg);
 
             }
-        }
+     }
 
-        public void Clear() {
+     public void Clear() {
             Messages = Array.Empty<Message>(); ;
-        }
+     }
 
-        public void Write(Message Msg) {
-           
+      public void Write(Message Msg) {
+           //Messages.Append(Msg);
+           Console.WriteLine(Msg.Msg);
         }
 
 
