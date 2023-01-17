@@ -19,7 +19,7 @@ namespace Session_07 {
         // METHODS
         public ActionResponse Execute(ActionRequest request) {
             string output = "";
-            MessageLogger l = new MessageLogger();
+            
             ActionResponse response = new ActionResponse();
             response.RequestID= request.RequestID;
             response.ResponseID = Guid.NewGuid();
@@ -49,7 +49,7 @@ namespace Session_07 {
                 m.Msg = "Not a String";
             }
             Console.WriteLine(m);
-            l.Write(m);
+            Logger.Write(m);
             response.Output = output;
             
             return response;
@@ -66,16 +66,12 @@ namespace Session_07 {
                     ctr = s.Length;
                 }
             }
-
-
-
-            return word.ToUpper();
+             return word.ToUpper();
         }
 
         public string Conversion(string InputB) {
 
 
-            
             //string binary = Convert.ToString(Convert.ToInt32(InputB), 2);
 
             return InputB;
