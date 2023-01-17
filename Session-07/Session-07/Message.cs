@@ -8,6 +8,7 @@ using static Session_07.ActionRequest;
 namespace Session_07 {
     public class Message {
 
+
         // properties
 
         public Guid ID { get; set; }

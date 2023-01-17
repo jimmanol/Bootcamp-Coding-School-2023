@@ -48,7 +48,7 @@ namespace Session_07 {
             else {
                 m.Msg = "Not a String";
             }
-            
+            Console.WriteLine(m);
             l.Write(m);
             response.Output = output;
             

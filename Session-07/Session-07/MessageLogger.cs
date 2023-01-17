@@ -28,7 +28,7 @@ namespace Session_07 {
         }
 
         public void Write(Message Msg) {
-            Messages.Append(Msg);
+           
         }
 
 
