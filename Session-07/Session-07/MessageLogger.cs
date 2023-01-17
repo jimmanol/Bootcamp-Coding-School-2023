@@ -9,8 +9,7 @@ namespace Session_07 {
 
         // properties
 
-        public Message[] Messages { get; set; }
-
+        public Message[] Messages = Array.Empty<Message>();
 
 
         // methods

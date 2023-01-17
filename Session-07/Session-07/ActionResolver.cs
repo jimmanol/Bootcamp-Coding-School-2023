@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Session_07 {
     public class ActionResolver {
-        
-         // PROPERTIES
-        public MessageLogger Logger { get; set; }
+
+        // PROPERTIES
+        public MessageLogger Logger = new MessageLogger();
          
         // CTOR
         public ActionResolver() {
