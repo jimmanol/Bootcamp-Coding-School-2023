@@ -8,7 +8,7 @@
             ActionRequest request = new ActionRequest();
             request.RequestID = id;
             request.Input = word;
-            request.Action = ActionRequest.ActionEnum.Reverse;
+            request.Action = ActionRequest.ActionEnum.Convert;
 
 
 
@@ -20,8 +20,7 @@
             resolver.Logger = new MessageLogger();
             resolver.Logger.Messages = Array.Empty<Message>();
 
-            response = resolver.Execute(request);
-            response = resolver.Execute(request);
+          
             response = resolver.Execute(request);
 
 
@@ -33,6 +32,7 @@
                 Console.WriteLine(message);
 
             }
+            Console.WriteLine(response.Output);
         }
     }
 }

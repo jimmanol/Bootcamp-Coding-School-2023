@@ -30,7 +30,7 @@ namespace Session_07 {
                 switch (request.Action) {
                     case ActionRequest.ActionEnum.Uppercase:
                         output = Capitalise(request.Input);
-                        m.Msg = "Succesful Capitilise";
+                        m.Msg = "Succesfuly Capitilised";
                         break;
                     case ActionRequest.ActionEnum.Reverse:
                         output = ReverseStr(request.Input);
@@ -50,7 +50,7 @@ namespace Session_07 {
             }
             
             Logger.Write(m);
-            //Logger.ReadAll();
+            
             response.Output = output;
             
             return response;
@@ -72,10 +72,13 @@ namespace Session_07 {
 
         public string Conversion(string InputB) {
 
+            string result = string.Empty;
+            foreach (char ch in InputB) {
+                result += Convert.ToString((int)ch, 2);
+            }
 
-            string binary = Convert.ToString(Convert.ToInt32(InputB), 2);
 
-            return InputB;
+            return result;
         }
 
         public string ReverseStr(string InputC) {
