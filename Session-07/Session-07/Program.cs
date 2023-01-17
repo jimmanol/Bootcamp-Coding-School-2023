@@ -8,7 +8,7 @@
             ActionRequest request = new ActionRequest();
             request.RequestID = id;
             request.Input = word;
-            request.Action = ActionRequest.ActionEnum.Convert;
+            request.Action = ActionRequest.ActionEnum.Reverse;
 
 
 
@@ -33,6 +33,8 @@
 
             }
             Console.WriteLine(response.Output);
+
+            Console.ReadLine();
         }
     }
 }

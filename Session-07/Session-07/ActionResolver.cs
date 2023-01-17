@@ -27,21 +27,29 @@ namespace Session_07 {
                     m.ID = Guid.NewGuid();
                     m.TimeStamp = DateTime.Now;
             if (request.Input is string) {
+
                 switch (request.Action) {
                     case ActionRequest.ActionEnum.Uppercase:
                         output = Capitalise(request.Input);
-                        m.Msg = "Succesfuly Capitilised";
+                        m.Msg = "Succesfuly Capitilise";
                         break;
                     case ActionRequest.ActionEnum.Reverse:
                         output = ReverseStr(request.Input);
                         m.Msg = "Succesful Reverse";
                         break;
                     case ActionRequest.ActionEnum.Convert:
-                        output = Conversion(request.Input);
-                        m.Msg = "Succesful Conversion";
+                        try {
+                            output = Conversion(request.Input);
+                            m.Msg = "Succesful Conversion";
+                        }
+                        catch {
+                            m.Msg = "Error";
+                        }
+                       
+                        
                         break;
                     default:
-                        m.Msg = "Error";
+                        m.Msg = "Sorry! Not a supported action";
                         break;
                 }
             }
@@ -71,14 +79,16 @@ namespace Session_07 {
         }
 
         public string Conversion(string InputB) {
-
             string result = string.Empty;
-            foreach (char ch in InputB) {
-                result += Convert.ToString((int)ch, 2);
-            }
-
-
-            return result;
+            
+                int number = int.Parse(InputB);
+                
+                for (int i = 0; number > 0; i++) {
+                    result = number % 2 + result;
+                    number = number / 2;
+                }
+                return result;
+            
         }
 
         public string ReverseStr(string InputC) {
