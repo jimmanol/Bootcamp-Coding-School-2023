@@ -13,14 +13,16 @@ namespace Session_07 {
 
         public ActionEnum Action { get; set; }
 
-
+        // constructor
+        public ActionRequest() {
+            RequestID = Guid.NewGuid();
+        }
         
         public enum ActionEnum {
             Convert,
             Uppercase,
             Reverse
         }
-
 
 
     }

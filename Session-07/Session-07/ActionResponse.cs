@@ -14,7 +14,10 @@ namespace Session_07 {
 
         public string? Output { get; set; }
 
-
+        // constructor
+        public ActionResponse() {
+            ResponseID = Guid.NewGuid();
+        }
 
     }
 }

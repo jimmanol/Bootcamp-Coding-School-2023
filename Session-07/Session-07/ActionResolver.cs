@@ -12,41 +12,45 @@ namespace Session_07 {
         public MessageLogger Logger { get; set; }
          
         // CTOR
-        public ActionResolver() {
+        //public ActionResolver() {
 
-          }
+        //  }
 
         // METHODS
         public ActionResponse Execute(ActionRequest request) {
-            string output = "";
             
             ActionResponse response = new ActionResponse();
-            response.RequestID= request.RequestID;
+            response.RequestID = request.RequestID;
             response.ResponseID = Guid.NewGuid();
             Message m = new Message();
                     m.ID = Guid.NewGuid();
                     m.TimeStamp = DateTime.Now;
+
+           // Logger.Messages[0] = message;
+
+            // should have try catch
             if (request.Input is string) {
 
                 switch (request.Action) {
                     case ActionRequest.ActionEnum.Uppercase:
-                        output = Capitalise(request.Input);
+                        //Logger.Write(new Message("UPPERCASE"));
+                        response.Output = Capitalise(request.Input);
                         m.Msg = "Succesfuly Capitilise";
                         break;
                     case ActionRequest.ActionEnum.Reverse:
-                        output = ReverseStr(request.Input);
+                        //Logger.Write(new Message("REVERSE"));
+                        response.Output = ReverseStr(request.Input);
                         m.Msg = "Succesful Reverse";
                         break;
                     case ActionRequest.ActionEnum.Convert:
                         try {
-                            output = Conversion(request.Input);
+                            //Logger.Write(new Message("CONVERT"));
+                            response.Output = Conversion(request.Input);
                             m.Msg = "Succesful Conversion";
                         }
                         catch {
                             m.Msg = "Error";
                         }
-                       
-                        
                         break;
                     default:
                         m.Msg = "Sorry! Not a supported action";
@@ -56,13 +60,19 @@ namespace Session_07 {
             else {
                 m.Msg = "Not a String";
             }
+            //catch (Exception ex){ throw; log messages }
+            //finally (log message)
             
             Logger.Write(m);
             
-            response.Output = output;
-            
             return response;
         }
+
+        //private void Log(string msg) {
+        //    Message message = new Message(msg);
+        //    Logger.Write(message);
+        //}
+
 
         public string Capitalise(string InputA) {
             string line = InputA;

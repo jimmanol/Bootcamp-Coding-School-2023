@@ -2,16 +2,11 @@
     internal class Program {
         public static void Main(string[] args) {
 
-            Guid id = Guid.NewGuid();
-            string word = "Hello World";
-
-            ActionRequest request = new ActionRequest();
-            request.RequestID = id;
-            request.Input = word;
-            request.Action = ActionRequest.ActionEnum.Reverse;
-
-
-
+            ActionRequest request = new ActionRequest() {
+                   Input = "Hello World",
+                   Action= ActionRequest.ActionEnum.Reverse
+            };
+            
 
             ActionResponse response = new ActionResponse();
 
@@ -24,17 +19,16 @@
             response = resolver.Execute(request);
 
 
+            //// DISPLAY MESSAGES FROM LOGGER
+            //foreach (Message message in resolver.Logger.Messages) {
 
+            //    Console.WriteLine(message);
 
-            // DISPLAY MESSAGES FROM LOGGER
-            foreach (Message message in resolver.Logger.Messages) {
-
-                Console.WriteLine(message);
-
-            }
+            //}
             Console.WriteLine(response.Output);
 
             Console.ReadLine();
+        
         }
     }
 }
