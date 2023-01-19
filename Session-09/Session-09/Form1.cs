@@ -275,37 +275,75 @@ namespace Session_09 {
         // OPERATION KEYS
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " + ";
-            _calcOperation = CalcOperation.Addition;
+
+            if (_result !=null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += " + ";
+                _calcOperation = CalcOperation.Addition;
+            }
+           
         }
         private void btnMinus_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " - ";
-            _calcOperation = CalcOperation.Subtraction;
+
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += " - ";
+                _calcOperation = CalcOperation.Subtraction;
+            }
         }
 
         private void btnDivide_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " / ";
-            _calcOperation = CalcOperation.Division;
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += " / ";
+                _calcOperation = CalcOperation.Division;
+            }
         }
 
         private void btnMultiply_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " x ";
-            _calcOperation = CalcOperation.Multiplication;
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += " x ";
+                _calcOperation = CalcOperation.Multiplication;
+            }
         }
 
         private void btnRoot_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += (char)0x221A;
-            _calcOperation = CalcOperation.SquareRoot;
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += (char)0x221A;
+                _calcOperation = CalcOperation.SquareRoot;
+            }
         }
 
         private void btnPower_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " ^ ";
-            _calcOperation = CalcOperation.RaisetoPower;
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += " ^ ";
+                _calcOperation = CalcOperation.RaisetoPower;
+            }
         }
 
         //decimal doesnt work yet!
         private void btnDecimal_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += ".";
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else {
+                ctrlDisplay.Text += ".";
+            }
             //_calcOperation = CalcOperation.Decimal;
         }
 
