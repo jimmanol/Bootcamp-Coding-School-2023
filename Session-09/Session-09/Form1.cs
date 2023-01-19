@@ -11,7 +11,8 @@ namespace Session_09 {
 
         enum CalcOperation {
             Addition,
-            Subtraction
+            Subtraction,
+            Multiplication
         }
 
 
@@ -20,7 +21,8 @@ namespace Session_09 {
         }
 
         private void btnMultiply_Click(object sender, EventArgs e) {
-
+            ctrlDisplay.Text += " x ";
+            _calcOperation = CalcOperation.Multiplication;
         }
 
 
@@ -38,6 +40,12 @@ namespace Session_09 {
 
                     Subtraction subtraction = new Subtraction();
                     _result = subtraction.Do(_value1, _value2);
+
+                    break;
+                case CalcOperation.Multiplication:
+
+                    Multiplication multiplication = new Multiplication();
+                    _result = multiplication.Do(_value1, _value2);
 
                     break;
                 default:
