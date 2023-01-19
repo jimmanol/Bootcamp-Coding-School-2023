@@ -16,6 +16,7 @@ namespace Session_09 {
             Multiplication,
             Division,
             SquareRoot,
+            RaisetoPower
         }
 
 
@@ -58,6 +59,12 @@ namespace Session_09 {
 
                     SquareRoot squareRoot = new SquareRoot();
                     _result = squareRoot.Do(_value1);
+
+                    break;
+                case CalcOperation.RaisetoPower:
+
+                    RaisetoPower raisetoPower = new RaisetoPower();
+                    _result = raisetoPower.Do(_value1, _value2);
 
                     break;
                 default:
@@ -289,7 +296,10 @@ namespace Session_09 {
             _calcOperation = CalcOperation.SquareRoot;
         }
 
-        
+        private void btnPower_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += " ^ ";
+            _calcOperation = CalcOperation.RaisetoPower;
+        }
     }
 }
 

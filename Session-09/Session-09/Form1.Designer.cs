@@ -210,6 +210,7 @@
             this.btnPower.TabIndex = 15;
             this.btnPower.Text = "(^)";
             this.btnPower.UseVisualStyleBackColor = true;
+            this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
             // btnZero
             // 
