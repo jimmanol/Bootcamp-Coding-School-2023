@@ -270,6 +270,8 @@ namespace Session_09 {
         }
 
 
+
+
         // OPERATION KEYS
 
         private void btnAdd_Click(object sender, EventArgs e) {
@@ -292,7 +294,7 @@ namespace Session_09 {
         }
 
         private void btnRoot_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " root ";
+            ctrlDisplay.Text += (char)0x221A;
             _calcOperation = CalcOperation.SquareRoot;
         }
 
@@ -300,6 +302,19 @@ namespace Session_09 {
             ctrlDisplay.Text += " ^ ";
             _calcOperation = CalcOperation.RaisetoPower;
         }
+
+        private void btnDecimal_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += ".";
+            //_calcOperation = CalcOperation.Decimal;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text = string.Empty;
+            _value1 = null;
+            _value2 = null;
+            _result = null;
+
+    }
     }
 }
 

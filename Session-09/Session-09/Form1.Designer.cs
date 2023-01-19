@@ -42,6 +42,7 @@
             this.btnZero = new System.Windows.Forms.Button();
             this.ctrlDisplay = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnDecimal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOne
@@ -98,7 +99,7 @@
             // btnEquals
             // 
             this.btnEquals.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEquals.Location = new System.Drawing.Point(158, 312);
+            this.btnEquals.Location = new System.Drawing.Point(85, 366);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(67, 48);
             this.btnEquals.TabIndex = 5;
@@ -240,12 +241,25 @@
             this.btnClear.TabIndex = 18;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDecimal
+            // 
+            this.btnDecimal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDecimal.Location = new System.Drawing.Point(158, 312);
+            this.btnDecimal.Name = "btnDecimal";
+            this.btnDecimal.Size = new System.Drawing.Size(67, 48);
+            this.btnDecimal.TabIndex = 19;
+            this.btnDecimal.Text = ".";
+            this.btnDecimal.UseVisualStyleBackColor = true;
+            this.btnDecimal.Click += new System.EventHandler(this.btnDecimal_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 427);
+            this.Controls.Add(this.btnDecimal);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.ctrlDisplay);
             this.Controls.Add(this.btnZero);
@@ -293,5 +307,6 @@
         private Button btnZero;
         private TextBox ctrlDisplay;
         private Button btnClear;
+        private Button btnDecimal;
     }
 }
