@@ -1,7 +1,7 @@
 ﻿namespace CalculatorLib {
     public class Addition {
-       public decimal Do(decimal? x, decimal? y) {
-            decimal ret = 0;
+       public double Do(double? x, double? y) {
+            double ret = 0;
             if (x != null && y != null) {
                     ret = x.Value + y.Value;
                 }

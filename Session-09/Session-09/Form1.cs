@@ -3,9 +3,10 @@ using CalculatorLib;
 namespace Session_09 {
     public partial class Form1 : Form {
 
-        private decimal? _value1 = null;
-        private decimal? _value2 = null;
-        private decimal? _result = null;
+        private double? _value1 = null;
+        private double? _value2 = null;
+        private double? _result = null;
+        
 
         private CalcOperation _calcOperation;
 
@@ -14,6 +15,7 @@ namespace Session_09 {
             Subtraction,
             Multiplication,
             Division,
+            SquareRoot,
         }
 
 
@@ -50,6 +52,12 @@ namespace Session_09 {
 
                     Division division = new Division();
                     _result= division.Do(_value1, _value2);
+
+                    break;
+                case CalcOperation.SquareRoot:
+
+                    SquareRoot squareRoot = new SquareRoot();
+                    _result = squareRoot.Do(_value1);
 
                     break;
                 default:
@@ -235,6 +243,25 @@ namespace Session_09 {
 
         }
 
+        private void btnZero_Click(object sender, EventArgs e) {
+            if (_result != null) {
+
+                ctrlDisplay.Text = string.Empty;
+                _value1 = null;
+                _value2 = null;
+                _result = null;
+            }
+
+            ctrlDisplay.Text += " 0 ";
+
+            if (_value1 == null) {
+                _value1 = 0;
+            }
+            else {
+                _value2 = 0;
+            }
+        }
+
 
         // OPERATION KEYS
 
@@ -256,6 +283,13 @@ namespace Session_09 {
             ctrlDisplay.Text += " x ";
             _calcOperation = CalcOperation.Multiplication;
         }
+
+        private void btnRoot_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += " root ";
+            _calcOperation = CalcOperation.SquareRoot;
+        }
+
+        
     }
 }
 

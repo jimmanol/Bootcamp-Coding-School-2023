@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CalculatorLib {
-    public class Multiplication {
-        public double Do(double? x, double? y) {
+    public class SquareRoot {
+        public double Do(double? x) {
             double ret = 0;
-            if (x != null && y != null) {
-                ret = x.Value * y.Value;
+            if (x != null) {
+                ret = Math.Sqrt(x.Value);
             }
             return ret;
         }
+
     }
 }
