@@ -40,7 +40,7 @@
             this.btnDivide = new System.Windows.Forms.Button();
             this.btnPower = new System.Windows.Forms.Button();
             this.btnZero = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ctrlDisplay = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDecimal = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.btnOne.TabIndex = 0;
             this.btnOne.Text = "1";
             this.btnOne.UseVisualStyleBackColor = true;
+            this.btnOne.Click += new System.EventHandler(this.btnOne_Click);
             // 
             // btnAdd
             // 
@@ -63,6 +64,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSix
             // 
@@ -100,6 +102,7 @@
             this.btnEquals.TabIndex = 5;
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = true;
+            this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
             // 
             // btnThree
             // 
@@ -118,6 +121,7 @@
             this.btnTwo.TabIndex = 7;
             this.btnTwo.Text = "2";
             this.btnTwo.UseVisualStyleBackColor = true;
+            this.btnTwo.Click += new System.EventHandler(this.btnTwo_Click);
             // 
             // btnSeven
             // 
@@ -207,14 +211,14 @@
             this.btnZero.Text = "0";
             this.btnZero.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // ctrlDisplay
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(12, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(291, 35);
-            this.textBox1.TabIndex = 17;
+            this.ctrlDisplay.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ctrlDisplay.Location = new System.Drawing.Point(12, 51);
+            this.ctrlDisplay.Name = "ctrlDisplay";
+            this.ctrlDisplay.ReadOnly = true;
+            this.ctrlDisplay.Size = new System.Drawing.Size(291, 35);
+            this.ctrlDisplay.TabIndex = 17;
             // 
             // btnClear
             // 
@@ -243,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(317, 427);
             this.Controls.Add(this.btnDecimal);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ctrlDisplay);
             this.Controls.Add(this.btnZero);
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnDivide);
@@ -287,7 +291,7 @@
         private Button btnDivide;
         private Button btnPower;
         private Button btnZero;
-        private TextBox textBox1;
+        private TextBox ctrlDisplay;
         private Button btnClear;
         private Button btnDecimal;
     }
