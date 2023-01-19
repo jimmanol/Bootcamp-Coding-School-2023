@@ -3,5 +3,9 @@ namespace Session_09 {
         public Form1() {
             InitializeComponent();
         }
+
+        private void btnMultiply_Click(object sender, EventArgs e) {
+
+        }
     }
 }
