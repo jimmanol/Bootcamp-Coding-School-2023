@@ -303,6 +303,7 @@ namespace Session_09 {
             _calcOperation = CalcOperation.RaisetoPower;
         }
 
+        //decimal doesnt work yet!
         private void btnDecimal_Click(object sender, EventArgs e) {
             ctrlDisplay.Text += ".";
             //_calcOperation = CalcOperation.Decimal;
