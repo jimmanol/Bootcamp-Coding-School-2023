@@ -12,7 +12,8 @@ namespace Session_09 {
         enum CalcOperation {
             Addition,
             Subtraction,
-            Multiplication
+            Multiplication,
+            Division,
         }
 
 
@@ -20,10 +21,7 @@ namespace Session_09 {
             InitializeComponent();
         }
 
-        private void btnMultiply_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " x ";
-            _calcOperation = CalcOperation.Multiplication;
-        }
+        
 
 
         private void btnEquals_Click(object sender, EventArgs e) {
@@ -48,6 +46,12 @@ namespace Session_09 {
                     _result = multiplication.Do(_value1, _value2);
 
                     break;
+                case CalcOperation.Division:
+
+                    Division division = new Division();
+                    _result= division.Do(_value1, _value2);
+
+                    break;
                 default:
                     break;
             }
@@ -55,10 +59,6 @@ namespace Session_09 {
             ctrlDisplay.Text += _result;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " + ";
-            _calcOperation = CalcOperation.Addition;
-        }
 
         //  NUMBER KEYS CLICK
         private void btnOne_Click(object sender, EventArgs e) {
@@ -235,9 +235,26 @@ namespace Session_09 {
 
         }
 
+
+        // OPERATION KEYS
+
+        private void btnAdd_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += " + ";
+            _calcOperation = CalcOperation.Addition;
+        }
         private void btnMinus_Click(object sender, EventArgs e) {
             ctrlDisplay.Text += " - ";
             _calcOperation = CalcOperation.Subtraction;
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += " / ";
+            _calcOperation = CalcOperation.Division;
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e) {
+            ctrlDisplay.Text += " x ";
+            _calcOperation = CalcOperation.Multiplication;
         }
     }
 }
