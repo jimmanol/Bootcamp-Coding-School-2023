@@ -25,7 +25,25 @@ namespace Session_09 {
         }
 
         
+        private void ButtonImplement(double value) {
+            if (_result != null) {
 
+                ctrlDisplay.Text = string.Empty;
+                _value1 = null;
+                _value2 = null;
+                _result = null;
+            }
+
+            ctrlDisplay.Text += Convert.ToString(value);
+
+
+            if (_value1 == null) {
+                _value1 = value;
+            }
+            else {
+                _value2 = value;
+            }
+        }
 
         private void btnEquals_Click(object sender, EventArgs e) {
             ctrlDisplay.Text += " = ";
@@ -78,195 +96,45 @@ namespace Session_09 {
         //  NUMBER KEYS CLICK
         private void btnOne_Click(object sender, EventArgs e) {
 
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 1 ";
-
-            if (_value1 == null) {
-                _value1 = 1;
-            }
-            else {
-                _value2 = 1;
-            }
+            ButtonImplement(1);
         }
 
         private void btnTwo_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 2 ";
-
-            if (_value1 == null) {
-                _value1 = 2;
-            }
-            else {
-                _value2 = 2;
-            }
+            ButtonImplement(2);
         }
 
         private void btnThree_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 3 ";
-
-            if (_value1 == null) {
-                _value1 = 3;
-            }
-            else {
-                _value2 = 3;
-            }
+            ButtonImplement(3);
         }
 
         private void btnFour_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 4 ";
-
-            if (_value1 == null) {
-                _value1 = 4;
-            }
-            else {
-                _value2 = 4;
-            }
+            ButtonImplement(4);
         }
 
         private void btnFive_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 5 ";
-
-            if (_value1 == null) {
-                _value1 = 5;
-            }
-            else {
-                _value2 = 5;
-            }
+            ButtonImplement(5);
         }
 
         private void btnSix_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 6 ";
-
-            if (_value1 == null) {
-                _value1 = 6;
-            }
-            else {
-                _value2 = 6;
-            }
+            ButtonImplement(6);
         }
 
         private void btnSeven_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 7 ";
-
-            if (_value1 == null) {
-                _value1 = 7;
-            }
-            else {
-                _value2 = 7;
-            }
+            ButtonImplement(7);
         }
 
         private void btnEight_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 8 ";
-
-            if (_value1 == null) {
-                _value1 = 8;
-            }
-            else {
-                _value2 = 8;
-            }
+            ButtonImplement(8);
 
         }
 
         private void btnNine_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 9 ";
-
-            if (_value1 == null) {
-                _value1 = 9;
-            }
-            else {
-                _value2 = 9;
-            }
+            ButtonImplement(9);
 
         }
 
         private void btnZero_Click(object sender, EventArgs e) {
-            if (_result != null) {
-
-                ctrlDisplay.Text = string.Empty;
-                _value1 = null;
-                _value2 = null;
-                _result = null;
-            }
-
-            ctrlDisplay.Text += " 0 ";
-
-            if (_value1 == null) {
-                _value1 = 0;
-            }
-            else {
-                _value2 = 0;
-            }
+            ButtonImplement(0);
         }
 
 
@@ -343,6 +211,7 @@ namespace Session_09 {
             }
             else {
                 ctrlDisplay.Text += ".";
+
             }
             //_calcOperation = CalcOperation.Decimal;
         }
