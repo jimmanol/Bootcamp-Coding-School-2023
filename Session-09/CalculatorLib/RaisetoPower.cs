@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CalculatorLib {
     public class RaisetoPower {
-        public double Do(double? x, double? y) {
+        public double Do(string? x, string? y) {
             double ret = 0;
             if (x != null && y != null) {
-                ret = Math.Pow(x.Value, y.Value);
+                ret = Math.Pow(Convert.ToInt32(x), Convert.ToInt32(y));
             }
             return ret;
         }

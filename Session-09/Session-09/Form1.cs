@@ -3,9 +3,10 @@ using CalculatorLib;
 namespace Session_09 {
     public partial class Form1 : Form {
 
-        private double? _value1 = null;
-        private double? _value2 = null;
+        private string? _value1 = string.Empty;
+        private string? _value2 = string.Empty;
         private double? _result = null;
+        private bool hasOperation = false;
         
 
         private CalcOperation _calcOperation;
@@ -33,16 +34,15 @@ namespace Session_09 {
                 _value2 = null;
                 _result = null;
             }
-
             ctrlDisplay.Text += Convert.ToString(value);
 
-
-            if (_value1 == null) {
-                _value1 = value;
+            if (hasOperation == false) {
+                _value1 += Convert.ToString(value);
             }
             else {
-                _value2 = value;
+                _value2 += Convert.ToString(value);
             }
+
         }
 
         private void btnEquals_Click(object sender, EventArgs e) {
@@ -53,7 +53,7 @@ namespace Session_09 {
 
                     Addition addition = new Addition();
                     _result = addition.Do(_value1, _value2);
-
+                    
                     break;
                 case CalcOperation.Subtraction:
 
@@ -70,7 +70,7 @@ namespace Session_09 {
                 case CalcOperation.Division:
 
                     Division division = new Division();
-                    _result= division.Do(_value1, _value2);
+                    _result = division.Do(_value1, _value2);
 
                     break;
                 case CalcOperation.SquareRoot:
@@ -88,7 +88,7 @@ namespace Session_09 {
                 default:
                     break;
             }
-
+            hasOperation = false;
             ctrlDisplay.Text += _result;
         }
 
@@ -143,7 +143,7 @@ namespace Session_09 {
         // OPERATION KEYS
 
         private void btnAdd_Click(object sender, EventArgs e) {
-
+            hasOperation = true;
             if (_result !=null) {
                 btnClear_Click(sender, e);
             }
@@ -154,7 +154,7 @@ namespace Session_09 {
            
         }
         private void btnMinus_Click(object sender, EventArgs e) {
-
+            hasOperation = true;
             if (_result != null) {
                 btnClear_Click(sender, e);
             }
@@ -165,6 +165,7 @@ namespace Session_09 {
         }
 
         private void btnDivide_Click(object sender, EventArgs e) {
+            hasOperation = true;
             if (_result != null) {
                 btnClear_Click(sender, e);
             }
@@ -175,6 +176,7 @@ namespace Session_09 {
         }
 
         private void btnMultiply_Click(object sender, EventArgs e) {
+            hasOperation = true;
             if (_result != null) {
                 btnClear_Click(sender, e);
             }
@@ -185,6 +187,7 @@ namespace Session_09 {
         }
 
         private void btnRoot_Click(object sender, EventArgs e) {
+            hasOperation = true;
             if (_result != null) {
                 btnClear_Click(sender, e);
             }
@@ -195,6 +198,7 @@ namespace Session_09 {
         }
 
         private void btnPower_Click(object sender, EventArgs e) {
+            hasOperation = true;
             if (_result != null) {
                 btnClear_Click(sender, e);
             }

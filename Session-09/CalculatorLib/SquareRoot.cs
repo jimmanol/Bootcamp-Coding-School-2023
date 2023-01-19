@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CalculatorLib {
     public class SquareRoot {
-        public double Do(double? x) {
+        public double Do(string? x) {
             double ret = 0;
             if (x != null) {
-                ret = Math.Sqrt(x.Value);
+                ret = Math.Sqrt(Convert.ToInt32(x));
             }
             return ret;
         }
