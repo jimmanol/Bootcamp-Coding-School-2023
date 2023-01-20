@@ -218,7 +218,13 @@ namespace Session_09 {
                 btnClear_Click(sender, e);
             }
             else {
-                ctrlDisplay.Text += ".";
+                if (ctrlDisplay.Text.Contains(".")) {
+                    btnDecimal.Enabled = false;
+                }
+                else {
+                    ctrlDisplay.Text += ".";
+                }
+                
 
             }
             //_calcOperation = CalcOperation.Decimal;
