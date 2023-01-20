@@ -170,7 +170,7 @@
             // 
             this.btnLoad.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLoad.Location = new System.Drawing.Point(478, 394);
+            this.btnLoad.Location = new System.Drawing.Point(491, 394);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(155, 48);
             this.btnLoad.TabIndex = 6;

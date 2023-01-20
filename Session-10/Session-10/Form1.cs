@@ -8,7 +8,7 @@ namespace Session_10 {
         List<Course> courses;
         List<Schedule> scheduled;
 
-        Serializer serializer = new Serializer();
+        
 
 
         public Form1() {
@@ -211,14 +211,30 @@ namespace Session_10 {
         
         // LOAD/SAVE buttons
 
-        private void btnLoad_Click(object sender, EventArgs e) {
-            //students = serializer.Deserialize<Student>("Students.json");
+        private void btnLoad_Click(object sender, EventArgs e) {   //Can't deserialize Students because its an array
+
+            Serializer serializer = new Serializer();
+            Student student1 = new Student() {
+                Name = "Dimitris",
+                Surname = "Raptodimos",
+                Gender = Student.GenderEnum.Male,
+                Age = 40,
+                Undergraduate = false,
+                UniversityID = Guid.NewGuid(),
+            };
+            serializer.SerializeToFile(student1, "Students.json");
+            Student s = new Student();
+            s = serializer.Deserialize<Student>("Students.json");
+
 
             MessageBox.Show("Loaded!");
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            serializer.SerializeToFile(students,  "Students.json");
+
+            Serializer serializer = new Serializer();
+
+            serializer.SerializeToFile(students, "Students.json");
             serializer.SerializeToFile(grades, "Grades.json");
             serializer.SerializeToFile(scheduled, "Schedule.json");
             serializer.SerializeToFile(courses, "Courses.json");
