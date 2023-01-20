@@ -1,3 +1,4 @@
+using System.Text.Json;
 using UniversityLib;
 
 namespace Session_10 {
@@ -207,17 +208,18 @@ namespace Session_10 {
         private void btnLoad_Click(object sender, EventArgs e) {   //Can't deserialize Students because its an array
 
             Serializer serializer = new Serializer();
-            Student student1 = new Student() {
-                Name = "Dimitris",
-                Surname = "Raptodimos",
-                Gender = Student.GenderEnum.Male,
-                Age = 40,
-                Undergraduate = false,
-                UniversityID = Guid.NewGuid(),
-            };
-            serializer.SerializeToFile(student1, "Students.json");
-            Student s = new Student();
-            s = serializer.Deserialize<Student>("Students.json");
+            //Student student1 = new Student() {
+            //    Name = "Dimitris",
+            //    Surname = "Raptodimos",
+            //    Gender = Student.GenderEnum.Male,
+            //    Age = 40,
+            //    Undergraduate = false,
+            //    UniversityID = Guid.NewGuid(),
+            //};
+            //serializer.SerializeToFile(student1, "Students.json");
+            //Student s = new Student();
+            students = JsonSerializer.Deserialize<List<Student>>("Students.json");
+            //students = serializer.Deserialize<List<Student>>("Students.json");
 
 
             MessageBox.Show("Loaded!");
