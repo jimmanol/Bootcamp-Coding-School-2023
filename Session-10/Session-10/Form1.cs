@@ -8,6 +8,9 @@ namespace Session_10 {
         List<Course> courses;
         List<Schedule> scheduled;
 
+        Serializer serializer = new Serializer();
+
+
         public Form1() {
             InitializeComponent();
         }
@@ -19,6 +22,8 @@ namespace Session_10 {
             PopulateCourses();
             PopulateGrades();
             PopulateSchedule();
+
+
         }
 
         private void PopulateStudents() {
@@ -200,11 +205,25 @@ namespace Session_10 {
 
         }
 
-        //Serializer serializer = new Serializer();
-        //serializer.SerializeToFile(university, "test.json");
+        
 
 
-        //university = serializer.Deserialize<University>("test.json");
+        
+        // LOAD/SAVE buttons
 
+        private void btnLoad_Click(object sender, EventArgs e) {
+            //students = serializer.Deserialize<Student>("Students.json");
+
+            MessageBox.Show("Loaded!");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            serializer.SerializeToFile(students,  "Students.json");
+            serializer.SerializeToFile(grades, "Grades.json");
+            serializer.SerializeToFile(scheduled, "Schedule.json");
+            serializer.SerializeToFile(courses, "Courses.json");
+
+            MessageBox.Show("Saved!");
+        }
     }
 }

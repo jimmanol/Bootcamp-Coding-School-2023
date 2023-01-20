@@ -38,6 +38,8 @@
             this.grvCourses = new System.Windows.Forms.DataGridView();
             this.grvSchedule = new System.Windows.Forms.DataGridView();
             this.grvGrades = new System.Windows.Forms.DataGridView();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCourses)).BeginInit();
@@ -47,6 +49,7 @@
             // 
             // grvStudents
             // 
+            this.grvStudents.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
@@ -59,7 +62,7 @@
             this.grvStudents.Location = new System.Drawing.Point(12, 60);
             this.grvStudents.Name = "grvStudents";
             this.grvStudents.RowTemplate.Height = 25;
-            this.grvStudents.Size = new System.Drawing.Size(810, 313);
+            this.grvStudents.Size = new System.Drawing.Size(810, 209);
             this.grvStudents.TabIndex = 0;
             this.grvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvStudents_CellContentClick_1);
             // 
@@ -132,39 +135,69 @@
             // 
             // grvCourses
             // 
+            this.grvCourses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvCourses.Location = new System.Drawing.Point(858, 60);
             this.grvCourses.Name = "grvCourses";
             this.grvCourses.RowTemplate.Height = 25;
-            this.grvCourses.Size = new System.Drawing.Size(729, 313);
+            this.grvCourses.Size = new System.Drawing.Size(496, 209);
             this.grvCourses.TabIndex = 3;
             this.grvCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCourses_CellContentClick);
             // 
             // grvSchedule
             // 
+            this.grvSchedule.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvSchedule.Location = new System.Drawing.Point(12, 408);
+            this.grvSchedule.Location = new System.Drawing.Point(12, 310);
             this.grvSchedule.Name = "grvSchedule";
             this.grvSchedule.RowTemplate.Height = 25;
-            this.grvSchedule.Size = new System.Drawing.Size(810, 339);
+            this.grvSchedule.Size = new System.Drawing.Size(446, 226);
             this.grvSchedule.TabIndex = 4;
             this.grvSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSchedule_CellContentClick);
             // 
             // grvGrades
             // 
+            this.grvGrades.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grvGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvGrades.Location = new System.Drawing.Point(858, 408);
+            this.grvGrades.Location = new System.Drawing.Point(858, 310);
             this.grvGrades.Name = "grvGrades";
             this.grvGrades.RowTemplate.Height = 25;
-            this.grvGrades.Size = new System.Drawing.Size(729, 339);
+            this.grvGrades.Size = new System.Drawing.Size(496, 226);
             this.grvGrades.TabIndex = 5;
             this.grvGrades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvGrades_CellContentClick);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLoad.Location = new System.Drawing.Point(478, 394);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(155, 48);
+            this.btnLoad.TabIndex = 6;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Location = new System.Drawing.Point(667, 394);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(155, 48);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1639, 850);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1392, 610);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.grvGrades);
             this.Controls.Add(this.grvSchedule);
             this.Controls.Add(this.grvCourses);
@@ -199,5 +232,7 @@
         private DataGridView grvCourses;
         private DataGridView grvSchedule;
         private DataGridView grvGrades;
+        private Button btnLoad;
+        private Button btnSave;
     }
 }
