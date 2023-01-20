@@ -33,8 +33,6 @@
             this.colUniversity = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colShowID = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bsStudents = new System.Windows.Forms.BindingSource(this.components);
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.grvCourses = new System.Windows.Forms.DataGridView();
             this.grvSchedule = new System.Windows.Forms.DataGridView();
             this.grvGrades = new System.Windows.Forms.DataGridView();
@@ -113,26 +111,6 @@
             this.colShowID.Name = "colShowID";
             this.colShowID.Text = "Show ID";
             // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(703, 31);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(119, 23);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 31);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(85, 23);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // grvCourses
             // 
             this.grvCourses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -201,8 +179,6 @@
             this.Controls.Add(this.grvGrades);
             this.Controls.Add(this.grvSchedule);
             this.Controls.Add(this.grvCourses);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.grvStudents);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -219,8 +195,6 @@
         #endregion
 
         private DataGridView grvStudents;
-        private Button btnOK;
-        private Button btnRefresh;
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colSurname;
         private DataGridViewTextBoxColumn colAge;
