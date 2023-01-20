@@ -49,28 +49,10 @@ namespace Session_10 {
 
 
             bsStudents.DataSource = students;
-
-
-            //Student student2 = new Student() {
-            //    Name = "Dimitris",
-            //    Surname = "Raptodimos",
-            //    Gender = Student.GenderEnum.Male,
-            //    Age = 40,
-            //    Undergraduate = false
-            //};
-
-            //List<Student> students2 = new List<Student>() {
-            //   student2
-            //};
-
         }
 
         private void PopulateGrades() {
-            
-            
-            
-            
-
+           
             grades = new List<Grade>();
 
             Grade grade1 = new Grade() {
@@ -86,6 +68,7 @@ namespace Session_10 {
                 Grades = 19
             };
             grades.Add(grade2); ;
+            grvGrades.DataSource = grades;
         }
 
         private void PopulateCourses() {
@@ -104,6 +87,7 @@ namespace Session_10 {
                 Subject = "Mathimatical Analysis"
             };
             courses.Add(course2); ;
+            grvCourses.DataSource = courses;
         }
 
         private void PopulateSchedule() {
@@ -126,6 +110,8 @@ namespace Session_10 {
 
             };
             scheduled.Add(scheduled2);
+            grvSchedule.DataSource = scheduled;
+
         }
 
 
