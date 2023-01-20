@@ -46,8 +46,12 @@ namespace Session_09 {
         }
 
         private void btnEquals_Click(object sender, EventArgs e) {
-            ctrlDisplay.Text += " = ";
-
+            if (_result != null) {
+                btnClear_Click(sender, e);
+            }
+            else { 
+                ctrlDisplay.Text += " = ";
+            }
             switch (_calcOperation) {
                 case CalcOperation.Addition:
 
