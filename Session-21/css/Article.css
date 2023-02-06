@@ -103,3 +103,33 @@ header li {
 .side ol {
     padding: 0;
 }
+
+@media (min-width: 601px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+
+    header a {
+    }
+    
+    header ul {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    /* .article {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .article-img img {
+        max-width: ;
+    }  */
+  }
+  
