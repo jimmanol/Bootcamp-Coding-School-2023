@@ -11,12 +11,14 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: #e5eff5;
-    padding: 25px;
     width: 100%;
-    
-
 }
 
+header .logo {
+    max-width: 160px;
+    padding: 10px;
+    padding-left: 25px;
+}
 
 header a {
     text-decoration: none;
@@ -45,13 +47,17 @@ header li {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    color:#636363;
+    color:#4d4c4c;
 }
 
 
 
 .article-img img {
     max-width: 100%;
+}
+
+.content h2 {
+    font-weight: normal;
 }
 
 .form {
@@ -105,7 +111,7 @@ header li {
     padding: 0;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 602px) {
 
     header {
         flex-wrap: wrap;
