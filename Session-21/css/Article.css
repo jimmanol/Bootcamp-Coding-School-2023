@@ -45,6 +45,7 @@ header li {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    color:#636363;
 }
 
 
@@ -104,12 +105,7 @@ header li {
     padding: 0;
 }
 
-@media (min-width: 601px) {
-
-    body {
-
-    }
-
+@media (max-width: 601px) {
 
     header {
         flex-wrap: wrap;
@@ -117,10 +113,6 @@ header li {
         
     }
 
-    header a {
-
-    }
-    
     header ul {
         display:flex;
         flex-wrap: wrap;
@@ -132,19 +124,5 @@ header li {
     .article {
         display: block;
     }
-
-    /* .content {
-        display:block;
-    } */
-
-    /* .article {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    
-    .article-img img {
-        max-width: ;
-    }  */
   }
   
