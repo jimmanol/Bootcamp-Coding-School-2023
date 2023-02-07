@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex.5 - Session 22</title>
+        <meta charset='UTF-8'/> 
+        <meta name="keywords" content="Javascript, Coding School">
+        <meta name="description" content="Javascript Increment String">
+        <meta name="author" content="Dimitris Manolas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+        <script>
+            function incrementString(str) {
+                let number = '';
+                for (let i = str.length - 1; i >= 0; i--) {
+                    if (isNaN(str[i])) {
+                        break;
+                    }
+                    number = str[i] + number;
+                }
+  
+                if (number) {
+                    let newNumber = (parseInt(number) + 1).toString();
+                    return str.slice(0, str.length - number.length) + newNumber;
+                } else {
+                    return str + '1';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>5th Exercise</h2>
+        <br><br>
+        <input type="text" id="inputString" value="">
+        <button onclick="document.getElementById('result').innerHTML = incrementString(document.getElementById('inputString').value)">Submit</button>
+        <div id="result"></div>
+    </body>
+</html>
