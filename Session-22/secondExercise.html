@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 2 - Session 22</title>
+        <meta charset='UTF-8'/> 
+        <meta name="keywords" content="Javascript, Coding School">
+        <meta name="description" content="Javascript Check if Palindrome">
+        <meta name="author" content="Dimitris Manolas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+        <script>
+            function checkPalindrome() {
+            var str = document.getElementById("inputString").value;
+            var len = str.length;
+            for (var i = 0; i < len / 2; i++) {
+                if (str[i] !== str[len - 1 - i]) {
+                alert(str + " is not a palindrome.");
+                return;
+                }
+            }
+            alert(str + " is a palindrome.");
+            }
+        </script>
+    </head>
+    <body>
+        <h2>2nd Exercise</h2>
+        <br><br>
+        <input type="text" id="inputString">
+        <button onclick="checkPalindrome()">Check Palindrome</button>
+    </body>
+</html>

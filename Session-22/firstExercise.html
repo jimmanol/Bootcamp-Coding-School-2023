@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex.1 - Session 22</title>
+        <meta charset='UTF-8'/> 
+        <meta name="keywords" content="Javascript, Coding School">
+        <meta name="description" content="Javascript Reverse String">
+        <meta name="author" content="Dimitris Manolas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+        <script>
+            function reverseString() {
+            const str = document.getElementById("inputString").value;
+            let reversed = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+            reversed += str[i];
+            }
+            document.getElementById("outputString").value = reversed;
+        }
+        </script>
+    </head>
+    <body>
+        <h2>1st Exercise</h2>
+        <br>
+        <input type="text" id="inputString">
+        <button onclick="reverseString()">Reverse String</button>
+        <br><br>
+        <input type="text" id="outputString" disabled>
+    </body>
+</html>
