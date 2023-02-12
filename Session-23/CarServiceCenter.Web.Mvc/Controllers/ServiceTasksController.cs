@@ -1,11 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CarServiceCenter.EF.Repositories;
+using CarServiceCenter.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarServiceCenter.Web.Mvc.Controllers {
     public class ServiceTasksController : Controller {
+        // properties
+        private readonly IEntityRepo<ServiceTask> _serviceTaskRepo;
+
+        // constructors
+        public ServiceTasksController(IEntityRepo<ServiceTask> serviceTaskRepo) {
+            _serviceTaskRepo = serviceTaskRepo;
+        }
+
         // GET: ServiceTasksController
         public ActionResult Index() {
-            return View();
+            var serviceTasks = _serviceTaskRepo.GetAll();
+            return View(model: serviceTasks);
         }
 
         // GET: ServiceTasksController/Details/5

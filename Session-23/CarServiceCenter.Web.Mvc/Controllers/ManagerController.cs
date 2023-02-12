@@ -1,11 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CarServiceCenter.EF.Repositories;
+using CarServiceCenter.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarServiceCenter.Web.Mvc.Controllers {
     public class ManagerController : Controller {
+        // properties
+        private readonly IEntityRepo<Manager> _managerRepo;
+
+        // constructors
+        public ManagerController(IEntityRepo<Manager> managerRepo) {
+            _managerRepo = managerRepo;
+        }
+
         // GET: ManagerController
         public ActionResult Index() {
-            return View();
+            var managers = _managerRepo.GetAll();
+            return View(model: managers);
         }
 
         // GET: ManagerController/Details/5

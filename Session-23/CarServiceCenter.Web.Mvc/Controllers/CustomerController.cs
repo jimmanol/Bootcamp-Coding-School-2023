@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CarServiceCenter.EF.Repositories;
+using CarServiceCenter.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarServiceCenter.Web.Mvc.Controllers {
     public class CustomerController : Controller {
+        // properties
+        private readonly IEntityRepo<Customer> _customerRepo;
+
+        // constructors
+        public CustomerController(IEntityRepo<Customer> customerRepo) {
+            _customerRepo = customerRepo;
+        }
+
         // GET: CustomerController
         public ActionResult Index() {
-            return View();
+            var customers = _customerRepo.GetAll();
+            return View(model: customers);
         }
+
 
         // GET: CustomerController/Details/5
         public ActionResult Details(int id) {
