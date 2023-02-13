@@ -33,12 +33,7 @@ namespace CarServiceCenter.Web.Mvc.Controllers {
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection) {
-            try {
-                return RedirectToAction(nameof(Index));
-            }
-            catch {
                 return View();
-            }
         }
 
         // GET: TransactionController/Edit/5

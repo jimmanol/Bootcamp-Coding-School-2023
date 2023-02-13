@@ -2,6 +2,17 @@
 {
     public class Car
     {
+        //properties
+        public int Id { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string CarRegistrationNumber { get; set; }
+
+
+        // Relations
+        public List<Transaction> Transactions { get; set; }
+
+        //constructor
         public Car(string brand, string model, string carRegistrationNumber)
         {
             Brand = brand;
@@ -11,12 +22,18 @@
             Transactions = new List<Transaction>();
         }
 
-        public int Id { get; set; }
-        public string Brand { get; set; }
-        public string Model { get; set; }
-        public string CarRegistrationNumber { get; set; }
+        public class CarCreateDto {
+            public String Brand { get; set; } = null!;
+            public String Model { get; set; } = null!;
+            public String CarRegistrationNumber { get; set; } = null!;
+        }
 
-        // Relations
-        public List<Transaction> Transactions { get; set; }
+        public class CarEditDto {
+            public int Id { get; set; }
+            public String Brand { get; set; } = null!;
+            public String Model { get; set; } = null!;
+            public String CarRegistrationNumber { get; set; } = null!;
+        }
+
     }
 }
