@@ -1,0 +1,86 @@
+﻿@page "/customerList/edit/{Id:int?}"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@using CoffeeShop.Blazor.Shared.Customer;
+@using CoffeeShop.Model;
+
+
+<h3>Customer Edit</h3>
+
+@if (customer == null)
+{
+    <p>Loading ... </p>
+}
+else
+{
+   
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <label class="form-label">Code</label>
+            <input class="form-control" @bind="@customer.Code" />
+
+        </div>
+
+
+        <div class=" col-md-6">
+            <label class="form-label">Description</label>
+            <input class="form-control" @bind="@customer.Description" />
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
+    </div>
+}
+@code {
+
+
+    [Parameter] public int? Id { get; set; }
+    CustomerEditDto customer { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id==null)
+        {
+            customer = new();
+        }
+        else
+        {
+            customer = await httpClient.GetFromJsonAsync<CustomerEditDto>($"customer/{Id}");
+        }
+
+    }
+
+    private void OnCancel()
+    {
+        navigationManager.NavigateTo("customerList");
+    }
+
+    private async Task OnSave()
+    {
+        HttpResponseMessage? response=null;
+       // CustomerEditDto c1 = new CustomerEditDto() { Id = customer.Id, Code = customer.Code, Description = customer.Description };
+        if (Id == null)
+        {
+            response = await httpClient.PostAsJsonAsync("customer", customer);
+          
+        }
+        else
+        {
+            response = await httpClient.PutAsJsonAsync("customer", customer);
+            
+        }
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("customerList");
+    }
+
+}
+

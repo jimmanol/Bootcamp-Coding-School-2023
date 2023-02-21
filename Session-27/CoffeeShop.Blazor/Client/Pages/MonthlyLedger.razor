@@ -1,0 +1,77 @@
+﻿@page "/monthlyledger"
+@using CoffeeShop.Model;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+@using CoffeeShop.Blazor.Shared;
+
+<h3>Monthly Ledger</h3>
+
+<PageTitle>Monthly Ledger</PageTitle>
+
+@if (isLoading == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<table>
+    <tr>
+        <th>
+            Year:
+        </th>
+        <th>
+            Month:
+        </th>
+        <th>
+            Income:
+        </th>
+        <th>
+            Expenses:
+        </th>
+        <th>
+            Total:
+        </th>
+    </tr>
+        @foreach (var monthlyLedger in MonthlyLedgers) {
+        <tr>
+            <td>
+                <input type="text" placeholder="Year" @bind="monthlyLedger.Year" readonly>
+            </td>
+            <td>
+                <input type="text" placeholder="Month" @bind="monthlyLedger.Month" readonly>
+            </td>
+            <td>
+                <input type="text" placeholder="Income" @bind="monthlyLedger.Income" readonly>
+            </td>
+            <td>
+                <input type="text" placeholder="Expenses" @bind="monthlyLedger.Expenses" readonly>
+            </td>
+            <td>
+                <input type="text" placeholder="Total" @bind="monthlyLedger.Total" readonly>
+            </td>
+        </tr>
+    }
+</table>
+}
+
+
+@code {
+    private List<MonthlyLedgerDto> MonthlyLedgers = new();
+    bool isLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync() {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    private async Task LoadItemsFromServer() {
+        var tempMonthlyLedgers = await httpClient.GetFromJsonAsync<List<MonthlyLedgerDto>>("monthlyledger");
+        if (tempMonthlyLedgers is not null) {
+            MonthlyLedgers = tempMonthlyLedgers;
+        }
+        else {
+            // TODO: if tempCustomerList is null
+        }
+    }
+}

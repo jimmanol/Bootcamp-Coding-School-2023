@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Web.Blazor.Server", "FuelStation.Web.Blazor\Server\FuelStation.Web.Blazor.Server.csproj", "{B7E58B3B-2C70-4912-A637-BE1531809154}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Web.Blazor.Client", "FuelStation.Web.Blazor\Client\FuelStation.Web.Blazor.Client.csproj", "{3CDEB2EA-B89C-4857-AE9E-0FE2DE0BB496}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Web.Blazor.Shared", "FuelStation.Web.Blazor\Shared\FuelStation.Web.Blazor.Shared.csproj", "{B93ABC15-5D86-44EB-8948-CA4362FA4B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Model", "FuelStation.Model\FuelStation.Model.csproj", "{C80D893B-4478-4A24-8989-66CA8A33D5AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.EF", "FuelStation.EF\FuelStation.EF.csproj", "{7C2B6111-D902-4160-816C-EA7E452001B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E58B3B-2C70-4912-A637-BE1531809154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E58B3B-2C70-4912-A637-BE1531809154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E58B3B-2C70-4912-A637-BE1531809154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E58B3B-2C70-4912-A637-BE1531809154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDEB2EA-B89C-4857-AE9E-0FE2DE0BB496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDEB2EA-B89C-4857-AE9E-0FE2DE0BB496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDEB2EA-B89C-4857-AE9E-0FE2DE0BB496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDEB2EA-B89C-4857-AE9E-0FE2DE0BB496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93ABC15-5D86-44EB-8948-CA4362FA4B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93ABC15-5D86-44EB-8948-CA4362FA4B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93ABC15-5D86-44EB-8948-CA4362FA4B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93ABC15-5D86-44EB-8948-CA4362FA4B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80D893B-4478-4A24-8989-66CA8A33D5AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80D893B-4478-4A24-8989-66CA8A33D5AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80D893B-4478-4A24-8989-66CA8A33D5AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80D893B-4478-4A24-8989-66CA8A33D5AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2B6111-D902-4160-816C-EA7E452001B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2B6111-D902-4160-816C-EA7E452001B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2B6111-D902-4160-816C-EA7E452001B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2B6111-D902-4160-816C-EA7E452001B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {928B6845-10CC-43C7-98C0-BB7365F9538D}
+	EndGlobalSection
+EndGlobal

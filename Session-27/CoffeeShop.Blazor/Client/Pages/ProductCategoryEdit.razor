@@ -1,0 +1,70 @@
+﻿@page "/productcategorylist/edit/{Id:int?}"
+@using CoffeeShop.Blazor.Shared;
+@using CoffeeShop.Model;
+@using CoffeeShop.Model.Enums;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Product Category Editor</h3>
+
+@if (ProductCategory == null) {
+    <p>Loading ...</p>
+}
+else {
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Code</label>
+            <input class="form-control" @bind="@ProductCategory.Code" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Description</label>
+            <input class="form-control" @bind="@ProductCategory.Description" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Product Type</label>
+            <select class="form-control" @bind="ProductCategory.ProductType">
+                @foreach (var enumValue in Enum.GetValues<ProductType>()) {
+                    <option value="@enumValue">@enumValue</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnSave">Save</button>
+            <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+        </div>
+
+    </div>
+}
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    ProductCategoryEditDto? ProductCategory { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        if (Id == null) {
+            ProductCategory = new();
+        }
+        else {
+            ProductCategory = await httpClient.GetFromJsonAsync<ProductCategoryEditDto>($"productCategory/{Id}");
+        }
+    }
+
+    private void OnCancel() {
+        navigationManager.NavigateTo("productCategorylist");
+    }
+
+    private async Task OnSave() {
+        HttpResponseMessage? response = null;
+        if (Id == null) {
+            response = await httpClient.PostAsJsonAsync("productCategory", ProductCategory);
+        }
+        else {
+            response = await httpClient.PutAsJsonAsync("productCategory", ProductCategory);
+        }
+
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("productCategorylist");
+    }
+}
