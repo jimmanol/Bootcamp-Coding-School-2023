@@ -21,7 +21,7 @@ namespace FuelStation.EF.Repositories {
         public Employee? GetById(Guid ID) {
             using var context = new FuelStationDbContext();
             return context.Employees
-            .Where(employee => employee.ID == ID)
+            .Where(employee => employee.Id == ID)
            .Include(employee => employee.Transactions).SingleOrDefault();
 
         }
@@ -35,7 +35,7 @@ namespace FuelStation.EF.Repositories {
         public void Update(Guid ID, Employee entity) {
             using var context = new FuelStationDbContext();
             var EmployeeDb = context.Employees
-                .Where(employee => employee.ID == ID)
+                .Where(employee => employee.Id == ID)
                 .Include(employee => employee.Transactions)
                 .SingleOrDefault();
             if (EmployeeDb is null) 
@@ -52,7 +52,7 @@ namespace FuelStation.EF.Repositories {
         public void Delete(Guid ID) {
             using var context = new FuelStationDbContext();
             var EmployeeDb = context.Employees
-                .Where(employee => employee.ID == ID)
+                .Where(employee => employee.Id == ID)
                 .Include(employee => employee.Transactions)
                 .SingleOrDefault();
             if (EmployeeDb is null)

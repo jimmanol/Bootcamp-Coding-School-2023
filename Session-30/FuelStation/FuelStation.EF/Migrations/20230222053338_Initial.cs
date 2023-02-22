@@ -29,7 +29,7 @@ namespace FuelStation.EF.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     HireDateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -39,7 +39,7 @@ namespace FuelStation.EF.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.ID);
+                    table.PrimaryKey("PK_Employees", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -47,8 +47,8 @@ namespace FuelStation.EF.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     ItemType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: false),
                     Cost = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: false)
@@ -82,7 +82,7 @@ namespace FuelStation.EF.Migrations
                         name: "FK_Transactions_Employees_EmployeeID",
                         column: x => x.EmployeeID,
                         principalTable: "Employees",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -127,7 +127,8 @@ namespace FuelStation.EF.Migrations
                 name: "IX_Items_Code",
                 table: "Items",
                 column: "Code",
-                unique: true);
+                unique: true,
+                filter: "[Code] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TransactionLines_ItemID",

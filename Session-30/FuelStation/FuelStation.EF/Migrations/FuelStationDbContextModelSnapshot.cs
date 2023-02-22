@@ -53,7 +53,7 @@ namespace FuelStation.EF.Migrations
 
             modelBuilder.Entity("FuelStation.Model.Employee", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -81,7 +81,7 @@ namespace FuelStation.EF.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Employees", (string)null);
                 });
@@ -93,7 +93,6 @@ namespace FuelStation.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
 
@@ -102,7 +101,6 @@ namespace FuelStation.EF.Migrations
                         .HasColumnType("decimal(7,2)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
@@ -119,7 +117,8 @@ namespace FuelStation.EF.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("Code")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[Code] IS NOT NULL");
 
                     b.ToTable("Items", (string)null);
                 });

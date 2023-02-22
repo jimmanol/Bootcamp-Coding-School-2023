@@ -1,0 +1,66 @@
+﻿@page "/customers/edit/{id:guid?}"
+@using FuelStation.Web.Blazor.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+
+<h3> Edit Customer </h3>
+
+
+@if (customer == null){
+    <p>Loading ... </p>
+}
+else{
+
+     <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input class="form-control" @bind="@customer.Name" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Surname</label>
+                <input class="form-control" @bind="@customer.Surname" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Card Number</label>
+                <input class="form-control" @bind="@customer.CardNumber" />
+            </div>
+     </div>
+        <div class="row mt-2">
+            <div class="col">
+                <button class="btn btn-success" @onclick="OnSave">Save</button>
+                <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+            </div>
+     </div>
+}
+
+@code {
+
+    [Parameter] public Guid? ID { get; set; }
+    CustomerEditDto? customer { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        if (ID == null) {
+            customer = new();
+        }
+        else {
+            customer = await httpClient.GetFromJsonAsync<CustomerEditDto>($"customer/{ID}");
+        }
+    }
+
+    private void OnCancel() {
+        navigationManager.NavigateTo("customers");
+    }
+
+    private async Task OnSave() {
+        HttpResponseMessage? response = null;
+        if (ID == null) {
+            response = await httpClient.PostAsJsonAsync("customer", customer);
+        }
+        else {
+            response = await httpClient.PutAsJsonAsync("customer", customer);
+        }
+        response.EnsureSuccessStatusCode();
+        navigationManager.NavigateTo("customers");
+    }
+}

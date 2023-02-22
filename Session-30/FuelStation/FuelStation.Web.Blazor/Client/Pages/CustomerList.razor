@@ -1,0 +1,75 @@
+﻿@page "/customers"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+@using FuelStation.Web.Blazor.Shared;
+
+
+<h3>Customers</h3>
+
+@if (isLoading){
+    <p>Loading ... </p>
+}
+else{
+    <button class="btn btn-primary" @onclick="AddNewCustomer">Add Customer</button>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Card Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in customerList) {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.Surname</td>
+                    <td>@customer.CardNumber</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditCustomer(customer)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteCustomer(customer)">Delete</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+
+    private bool isLoading = true;
+    private List<CustomerListDto> customerList = new();
+
+    protected override async Task OnInitializedAsync() {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    private async Task LoadItemsFromServer() {
+        customerList = await httpClient.GetFromJsonAsync<List<CustomerListDto>>("customer");
+    }
+
+    private async Task AddNewCustomer() {
+        navigationManager.NavigateTo("/customers/edit");
+    }
+
+    private async Task EditCustomer(CustomerListDto customer) {
+        navigationManager.NavigateTo($"/customers/edit/{customer.ID}");
+    }
+
+    private async Task DeleteCustomer(CustomerListDto customer) {
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Delete Customer. Are you sure?");
+        if (confirm) {
+            var response = await httpClient.DeleteAsync($"customer/{customer.ID}");
+            if (response.IsSuccessStatusCode) {
+                await LoadItemsFromServer();
+            }
+            else {
+                var error = await response.Content.ReadAsStringAsync();
+                await jsRuntime.InvokeVoidAsync("alert", error);
+            }
+        }
+    }
+}
