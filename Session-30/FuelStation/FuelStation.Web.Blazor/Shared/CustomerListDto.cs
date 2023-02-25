@@ -12,6 +12,7 @@ namespace FuelStation.Web.Blazor.Shared {
         public string Surname { get; set; } = null!;
         public string CardNumber { get; set; } = null!;
 
+
         public CustomerListDto() {
 
         }

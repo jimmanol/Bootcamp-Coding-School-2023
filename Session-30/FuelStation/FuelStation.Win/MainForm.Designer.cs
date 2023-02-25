@@ -26,12 +26,13 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.btnTransactions = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCustomers
             // 
             this.btnCustomers.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCustomers.Location = new System.Drawing.Point(79, 35);
+            this.btnCustomers.Location = new System.Drawing.Point(79, 60);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(217, 48);
             this.btnCustomers.TabIndex = 0;
@@ -42,7 +43,7 @@
             // btnItems
             // 
             this.btnItems.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnItems.Location = new System.Drawing.Point(79, 107);
+            this.btnItems.Location = new System.Drawing.Point(79, 132);
             this.btnItems.Name = "btnItems";
             this.btnItems.Size = new System.Drawing.Size(217, 51);
             this.btnItems.TabIndex = 1;
@@ -53,7 +54,7 @@
             // btnTransactions
             // 
             this.btnTransactions.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTransactions.Location = new System.Drawing.Point(79, 185);
+            this.btnTransactions.Location = new System.Drawing.Point(79, 209);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(217, 49);
             this.btnTransactions.TabIndex = 2;
@@ -61,11 +62,23 @@
             this.btnTransactions.UseVisualStyleBackColor = true;
             this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(30, 35);
+            this.btnBack.TabIndex = 13;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 285);
+            this.ClientSize = new System.Drawing.Size(379, 294);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnTransactions);
             this.Controls.Add(this.btnItems);
             this.Controls.Add(this.btnCustomers);
@@ -85,5 +98,6 @@
         private Button btnCustomers;
         private Button btnItems;
         private Button btnTransactions;
+        private Button btnBack;
     }
 }

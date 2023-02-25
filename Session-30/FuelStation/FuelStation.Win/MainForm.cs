@@ -34,5 +34,10 @@ namespace FuelStation.Win {
             TransactionsForm tranForm = new TransactionsForm();
             tranForm.ShowDialog();
         }
+
+        private void btnBack_Click(object sender, EventArgs e) {
+            LoginForm logForm = new LoginForm();
+            logForm.ShowDialog();
+        }
     }
 }

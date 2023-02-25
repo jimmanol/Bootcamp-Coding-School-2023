@@ -62,18 +62,18 @@
             // labelIdentity
             // 
             this.labelIdentity.AutoSize = true;
-            this.labelIdentity.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelIdentity.Location = new System.Drawing.Point(177, 9);
+            this.labelIdentity.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelIdentity.Location = new System.Drawing.Point(205, 9);
             this.labelIdentity.Name = "labelIdentity";
-            this.labelIdentity.Size = new System.Drawing.Size(163, 21);
+            this.labelIdentity.Size = new System.Drawing.Size(90, 25);
             this.labelIdentity.TabIndex = 3;
-            this.labelIdentity.Text = "Choose your Identity";
+            this.labelIdentity.Text = "Login as:";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 233);
+            this.ClientSize = new System.Drawing.Size(509, 249);
             this.Controls.Add(this.labelIdentity);
             this.Controls.Add(this.btnManagerLogin);
             this.Controls.Add(this.btnStaffLogin);

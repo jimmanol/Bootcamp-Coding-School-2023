@@ -13,5 +13,12 @@ namespace FuelStation.Win {
         public CardSearchForm() {
             InitializeComponent();
         }
+
+        private void btnExistingCustomer_Click(object sender, EventArgs e) {
+            txtCardNumber.Visible = true;
+            btnSearch.Visible = true;
+            txtCardNumber.Enabled = true;
+            btnSearch.Enabled = true;
+        }
     }
 }
