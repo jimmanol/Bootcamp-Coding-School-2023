@@ -19,15 +19,13 @@ using System.Windows.Forms;
 namespace FuelStation.Win {
     public partial class ItemsForm : Form {
         HttpClient client = new HttpClient();
-        
+
         public ItemsForm() {
             InitializeComponent();
             client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7137/");
-            cboxItemType.Properties.Items.AddRange(typeof(ItemType).GetEnumValues());
-
-
         }
+
         private void ItemsForm_Load(object sender, EventArgs e) {
             BindItemsToDataSource();
         }
@@ -38,8 +36,7 @@ namespace FuelStation.Win {
                 bsItems.DataSource = items;
                 grdItems.DataSource = bsItems;
             }
-        }            
-  
+        }
 
         //get
         private async Task<List<ItemListDto>> GetItems() {
@@ -120,7 +117,7 @@ namespace FuelStation.Win {
 
 
         private void grdItems_Click(object sender, EventArgs e) {
-           
+
         }
     }
 }

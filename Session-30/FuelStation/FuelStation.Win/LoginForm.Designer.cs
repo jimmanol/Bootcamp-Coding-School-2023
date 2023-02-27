@@ -23,69 +23,68 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btnCashierLogin = new System.Windows.Forms.Button();
-            this.btnStaffLogin = new System.Windows.Forms.Button();
-            this.btnManagerLogin = new System.Windows.Forms.Button();
-            this.labelIdentity = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnCashierLogin = new Button();
+            btnStaffLogin = new Button();
+            btnManagerLogin = new Button();
+            labelIdentity = new Label();
+            SuspendLayout();
             // 
             // btnCashierLogin
             // 
-            this.btnCashierLogin.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCashierLogin.Location = new System.Drawing.Point(12, 47);
-            this.btnCashierLogin.Name = "btnCashierLogin";
-            this.btnCashierLogin.Size = new System.Drawing.Size(202, 54);
-            this.btnCashierLogin.TabIndex = 0;
-            this.btnCashierLogin.Text = "Cashier";
-            this.btnCashierLogin.UseVisualStyleBackColor = true;
+            btnCashierLogin.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCashierLogin.Location = new Point(12, 47);
+            btnCashierLogin.Name = "btnCashierLogin";
+            btnCashierLogin.Size = new Size(202, 54);
+            btnCashierLogin.TabIndex = 0;
+            btnCashierLogin.Text = "Cashier";
+            btnCashierLogin.UseVisualStyleBackColor = true;
             // 
             // btnStaffLogin
             // 
-            this.btnStaffLogin.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnStaffLogin.Location = new System.Drawing.Point(155, 107);
-            this.btnStaffLogin.Name = "btnStaffLogin";
-            this.btnStaffLogin.Size = new System.Drawing.Size(202, 54);
-            this.btnStaffLogin.TabIndex = 1;
-            this.btnStaffLogin.Text = "Staff";
-            this.btnStaffLogin.UseVisualStyleBackColor = true;
+            btnStaffLogin.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStaffLogin.Location = new Point(155, 107);
+            btnStaffLogin.Name = "btnStaffLogin";
+            btnStaffLogin.Size = new Size(202, 54);
+            btnStaffLogin.TabIndex = 1;
+            btnStaffLogin.Text = "Staff";
+            btnStaffLogin.UseVisualStyleBackColor = true;
             // 
             // btnManagerLogin
             // 
-            this.btnManagerLogin.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnManagerLogin.Location = new System.Drawing.Point(292, 167);
-            this.btnManagerLogin.Name = "btnManagerLogin";
-            this.btnManagerLogin.Size = new System.Drawing.Size(202, 54);
-            this.btnManagerLogin.TabIndex = 2;
-            this.btnManagerLogin.Text = "Manager";
-            this.btnManagerLogin.UseVisualStyleBackColor = true;
+            btnManagerLogin.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnManagerLogin.Location = new Point(292, 167);
+            btnManagerLogin.Name = "btnManagerLogin";
+            btnManagerLogin.Size = new Size(202, 54);
+            btnManagerLogin.TabIndex = 2;
+            btnManagerLogin.Text = "Manager";
+            btnManagerLogin.UseVisualStyleBackColor = true;
             // 
             // labelIdentity
             // 
-            this.labelIdentity.AutoSize = true;
-            this.labelIdentity.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelIdentity.Location = new System.Drawing.Point(205, 9);
-            this.labelIdentity.Name = "labelIdentity";
-            this.labelIdentity.Size = new System.Drawing.Size(90, 25);
-            this.labelIdentity.TabIndex = 3;
-            this.labelIdentity.Text = "Login as:";
+            labelIdentity.AutoSize = true;
+            labelIdentity.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelIdentity.Location = new Point(205, 9);
+            labelIdentity.Name = "labelIdentity";
+            labelIdentity.Size = new Size(90, 25);
+            labelIdentity.TabIndex = 3;
+            labelIdentity.Text = "Login as:";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 249);
-            this.Controls.Add(this.labelIdentity);
-            this.Controls.Add(this.btnManagerLogin);
-            this.Controls.Add(this.btnStaffLogin);
-            this.Controls.Add(this.btnCashierLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "LoginForm";
-            this.Text = "Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(509, 249);
+            Controls.Add(labelIdentity);
+            Controls.Add(btnManagerLogin);
+            Controls.Add(btnStaffLogin);
+            Controls.Add(btnCashierLogin);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "LoginForm";
+            Text = "Welcome";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

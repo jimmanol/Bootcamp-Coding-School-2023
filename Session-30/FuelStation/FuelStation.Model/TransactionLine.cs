@@ -22,6 +22,16 @@ namespace FuelStation.Model {
         public TransactionLine() {
             ID = Guid.NewGuid();
         }
+        public TransactionLine(int quantity, decimal netValue, decimal discountPercent, decimal discountValue, decimal totalValue, Guid transactionId, Guid itemId) {
+            ID = Guid.NewGuid();
+            Quantity = quantity;
+            NetValue = netValue;
+            DiscountPercent = discountPercent;
+            DiscountValue = discountValue;
+            TotalValue = totalValue;
+            TransactionID = transactionId;
+            ItemID = itemId;
+        }
 
         //relations
         public Transaction Transaction { get; set; }

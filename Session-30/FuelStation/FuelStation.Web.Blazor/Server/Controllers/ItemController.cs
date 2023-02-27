@@ -46,7 +46,6 @@ namespace FuelStation.Blazor.Web.Server.Controllers {
         [HttpPost]
         public async Task Post(ItemEditDto item) {
             var newItem = new Item(item.Code, item.Description, item.ItemType, item.Price, item.Cost);
-            // newItem.TransactionLines = new();
             _itemRepo.Add(newItem);
         }
 
@@ -59,7 +58,6 @@ namespace FuelStation.Blazor.Web.Server.Controllers {
 
         public async Task Put(ItemEditDto item) {
             var itemToUpdate = _itemRepo.GetById(item.Id);
-            // itemToUpdate.Id=item.Id;
             itemToUpdate.Code = item.Code;
             itemToUpdate.Description = item.Description;
             itemToUpdate.ItemType = item.ItemType;

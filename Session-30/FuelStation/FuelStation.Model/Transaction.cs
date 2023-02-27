@@ -22,9 +22,18 @@ namespace FuelStation.Model {
             ID = Guid.NewGuid();
             TransactionLines = new();
         }
+        public Transaction(DateTime date, PaymentMethod paymentMethod, decimal totalValue, Guid employeeID, Guid customerID) {
+            ID = Guid.NewGuid();
+            Date = date;
+            PaymentMethod = paymentMethod;
+            TotalValue = totalValue;
+            EmployeeID = employeeID;
+            CustomerID = customerID;
+            TransactionLines = new();
+        }
 
         //relations
-        public Employee Employee { get; set; }
-        public Customer Customer { get; set; }
+        public Employee Employee { get; set; } 
+        public Customer Customer { get; set; } 
     }
 }
