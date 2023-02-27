@@ -23,82 +23,80 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btnCustomers = new System.Windows.Forms.Button();
-            this.btnItems = new System.Windows.Forms.Button();
-            this.btnTransactions = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            btnCustomers = new Button();
+            btnItems = new Button();
+            btnTransactions = new Button();
+            btnBack = new Button();
+            SuspendLayout();
             // 
             // btnCustomers
             // 
-            this.btnCustomers.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCustomers.Location = new System.Drawing.Point(79, 56);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(217, 45);
-            this.btnCustomers.TabIndex = 0;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            btnCustomers.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCustomers.Location = new Point(79, 56);
+            btnCustomers.Name = "btnCustomers";
+            btnCustomers.Size = new Size(217, 45);
+            btnCustomers.TabIndex = 0;
+            btnCustomers.Text = "Customers";
+            btnCustomers.UseVisualStyleBackColor = true;
+            btnCustomers.Click += btnCustomers_Click;
             // 
             // btnItems
             // 
-            this.btnItems.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnItems.Location = new System.Drawing.Point(79, 123);
-            this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(217, 48);
-            this.btnItems.TabIndex = 1;
-            this.btnItems.Text = "Items";
-            this.btnItems.UseVisualStyleBackColor = true;
-            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
+            btnItems.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnItems.Location = new Point(79, 123);
+            btnItems.Name = "btnItems";
+            btnItems.Size = new Size(217, 48);
+            btnItems.TabIndex = 1;
+            btnItems.Text = "Items";
+            btnItems.UseVisualStyleBackColor = true;
+            btnItems.Click += btnItems_Click;
             // 
             // btnTransactions
             // 
-            this.btnTransactions.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTransactions.Location = new System.Drawing.Point(79, 195);
-            this.btnTransactions.Name = "btnTransactions";
-            this.btnTransactions.Size = new System.Drawing.Size(217, 46);
-            this.btnTransactions.TabIndex = 2;
-            this.btnTransactions.Text = "Transactions";
-            this.btnTransactions.UseVisualStyleBackColor = true;
-            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
+            btnTransactions.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTransactions.Location = new Point(79, 195);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Size = new Size(217, 46);
+            btnTransactions.TabIndex = 2;
+            btnTransactions.Text = "Transactions";
+            btnTransactions.UseVisualStyleBackColor = true;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Shaumy", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(34, 33);
-            this.btnBack.TabIndex = 13;
-            this.btnBack.Text = "<";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Font = new Font("Shaumy", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(34, 33);
+            btnBack.TabIndex = 13;
+            btnBack.Text = "<";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 289);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnTransactions);
-            this.Controls.Add(this.btnItems);
-            this.Controls.Add(this.btnCustomers);
-            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "MainForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 14F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(377, 289);
+            Controls.Add(btnBack);
+            Controls.Add(btnTransactions);
+            Controls.Add(btnItems);
+            Controls.Add(btnCustomers);
+            Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MainForm";
+            SizeGripStyle = SizeGripStyle.Show;
+            Text = "Main Menu";
+            Load += MainForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
-
-        private Button btnCustomers;
-        private Button btnItems;
-        private Button btnTransactions;
         private Button btnBack;
+        public Button btnCustomers;
+        public Button btnItems;
+        public Button btnTransactions;
     }
 }

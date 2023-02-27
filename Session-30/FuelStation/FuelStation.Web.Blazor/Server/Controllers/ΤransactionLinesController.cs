@@ -17,9 +17,9 @@ namespace FuelStation.Web.Blazor.Server.Controllers {
 
 
         [HttpGet]
-        public async Task<IEnumerable<TransactionLineListDto>> Get() {
+        public async Task<IEnumerable<TransactionLineEditDto>> Get() {
             var result = _transactionLineRepo.GetAll();
-            return result.Select(transactionLine => new TransactionLineListDto {
+            return result.Select(transactionLine => new TransactionLineEditDto {
                 Id = transactionLine.ID,
                 TransactionId = transactionLine.TransactionID,
                 ItemId = transactionLine.ItemID,
@@ -76,7 +76,6 @@ namespace FuelStation.Web.Blazor.Server.Controllers {
 
         [HttpDelete("{id}")]
         public async Task Delete(Guid id) {
-            //var transactionLine = _transactionLineRepo.GetById(id).TransactionID;
             _transactionLineRepo.Delete(id);
         }
 

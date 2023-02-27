@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuelStation.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,22 @@ namespace FuelStation.Web.Blazor.Shared {
         public decimal TotalValue { get; set; }
 
         // relations
-        public Guid TransactionId { get; set; }
-        public Guid ItemId { get; set; }
+        
         public ItemListDto Item { get; set; } = null!;
+
+
+        public TransactionLineListDto() {
+
+        }
+        public TransactionLineListDto(TransactionLine transactionLine) {
+            Id = transactionLine.ID;
+            Quantity = transactionLine.Quantity;
+            DiscountPercent = transactionLine.DiscountPercent;
+            Item = new ItemListDto(transactionLine.Item);
+            ItemPrice = transactionLine.ItemPrice;
+            NetValue = transactionLine.NetValue;
+            DiscountValue = transactionLine.DiscountValue;
+            TotalValue = transactionLine.TotalValue;
+        }
     }
 }

@@ -26,5 +26,20 @@ namespace FuelStation.Web.Blazor.Shared {
 
         //relations
         public List<Transaction> Transactions { get; set; } = new List<Transaction>();
+
+
+        //ctors
+        public EmployeeEditDto() {
+
+        }
+        public EmployeeEditDto(Employee employee) {
+            Id = employee.Id;
+            Name = employee.Name;
+            Surname = employee.Surname;
+            HireDateStart = employee.HireDateStart;
+            HireDateEnd = employee.HireDateEnd;
+            SalaryPerMonth = employee.SalaryPerMonth;
+            EmployeeType = employee.EmployeeType;
+        }
     }
 }

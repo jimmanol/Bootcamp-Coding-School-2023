@@ -23,6 +23,19 @@ namespace FuelStation.Web.Blazor.Shared {
         [Required]
         public EmployeeType EmployeeType { get; set; }
 
+        public EmployeeListDto() {
+
+        }
+
+        public EmployeeListDto(Employee employee) {
+            Id = employee.Id;
+            Name = employee.Name;
+            Surname = employee.Surname;
+            HireDateStart = employee.HireDateStart;
+            HireDateEnd = employee.HireDateEnd;
+            SalaryPerMonth = employee.SalaryPerMonth;
+            EmployeeType = employee.EmployeeType;
+        }
 
     }
 }

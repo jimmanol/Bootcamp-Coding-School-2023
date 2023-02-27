@@ -20,9 +20,9 @@ namespace FuelStation.Web.Blazor.Server.Controllers {
         }
 
         [HttpGet]
-        public async Task<IEnumerable<TransactionListDto>> Get() {
+        public async Task<IEnumerable<TransactionEditDto>> Get() {
             var result = _transactionRepo.GetAll();
-            return result.Select(transaction => new TransactionListDto {
+            return result.Select(transaction => new TransactionEditDto {
                 Id = transaction.ID,
                 Date = transaction.Date,
                 PaymentMethod = transaction.PaymentMethod,

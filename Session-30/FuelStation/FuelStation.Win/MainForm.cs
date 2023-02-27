@@ -11,13 +11,12 @@ using System.Windows.Forms;
 namespace FuelStation.Win {
     public partial class MainForm : Form {
 
-        
+
         public MainForm() {
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            
         }
 
         private void btnCustomers_Click(object sender, EventArgs e) {
@@ -36,8 +35,7 @@ namespace FuelStation.Win {
         }
 
         private void btnBack_Click(object sender, EventArgs e) {
-            LoginForm logForm = new LoginForm();
-            logForm.ShowDialog();
+            this.Close();
         }
     }
 }

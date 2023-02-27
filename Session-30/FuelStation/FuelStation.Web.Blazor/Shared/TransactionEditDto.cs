@@ -19,9 +19,9 @@ namespace FuelStation.Web.Blazor.Shared {
         public decimal TotalValue { get; set; }
 
         [Required]
-        [Range(1, 2, ErrorMessage = "You must choose a Payment Method!")]
         public PaymentMethod PaymentMethod { get; set; }
 
+        
         // Relations
         public Guid CustomerId { get; set; }
         public Customer? Customer { get; set; } = null!;
@@ -29,8 +29,22 @@ namespace FuelStation.Web.Blazor.Shared {
         public Guid EmployeeId { get; set; }
         public Employee? Employee { get; set; } = null!;
 
-        public List<TransactionLineEditDto>? TransactionLines { get; set; } = new List<TransactionLineEditDto>();
+        public List<TransactionLineEditDto>? TransactionLines { get; set; } = new(); //List<TransactionLineEditDto>();
 
+
+        // ctors
+        public TransactionEditDto() {
+
+        }
+        public TransactionEditDto(Transaction transaction) {
+            Id = transaction.ID;
+            Date = transaction.Date;
+            PaymentMethod = transaction.PaymentMethod;
+            TotalValue = transaction.TotalValue;
+            EmployeeId = transaction.EmployeeID;
+            CustomerId = transaction.CustomerID;
+            TransactionLines = transaction.TransactionLines.Select(t => new TransactionLineEditDto(t)).ToList();
+        }
 
     }
 }

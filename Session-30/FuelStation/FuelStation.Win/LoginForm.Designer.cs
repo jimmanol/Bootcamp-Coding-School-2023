@@ -38,6 +38,7 @@
             btnCashierLogin.TabIndex = 0;
             btnCashierLogin.Text = "Cashier";
             btnCashierLogin.UseVisualStyleBackColor = true;
+            btnCashierLogin.Click += btnCashierLogin_Click;
             // 
             // btnStaffLogin
             // 
@@ -48,6 +49,7 @@
             btnStaffLogin.TabIndex = 1;
             btnStaffLogin.Text = "Staff";
             btnStaffLogin.UseVisualStyleBackColor = true;
+            btnStaffLogin.Click += btnStaffLogin_Click;
             // 
             // btnManagerLogin
             // 
@@ -58,6 +60,7 @@
             btnManagerLogin.TabIndex = 2;
             btnManagerLogin.Text = "Manager";
             btnManagerLogin.UseVisualStyleBackColor = true;
+            btnManagerLogin.Click += btnManagerLogin_Click;
             // 
             // labelIdentity
             // 
@@ -88,10 +91,9 @@
         }
 
         #endregion
-
-        private Button btnCashierLogin;
         private Button btnStaffLogin;
         private Button btnManagerLogin;
         private Label labelIdentity;
+        public Button btnCashierLogin;
     }
 }

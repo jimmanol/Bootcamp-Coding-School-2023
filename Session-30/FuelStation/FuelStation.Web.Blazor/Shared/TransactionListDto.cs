@@ -14,12 +14,25 @@ namespace FuelStation.Web.Blazor.Shared {
         public decimal TotalValue { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
 
+        
         // Relations
-        public Guid CustomerId { get; set; }
-        public Customer? Customer { get; set; } = null!;
+        public List<TransactionLineListDto> TransactionLines { get; set; } = new();
+        public EmployeeListDto Employee { get; set; } = null!;
+        public CustomerListDto Customer { get; set; } = null!;
 
-        public Guid EmployeeId { get; set; }
-        public List<TransactionLineEditDto> TransactionLines { get; set; } = new();
+
+        //ctors
+        public TransactionListDto() {
+        }
+
+        public TransactionListDto(Transaction transaction) {
+            Id = transaction.ID;
+            Date = transaction.Date;
+            PaymentMethod = transaction.PaymentMethod;
+            TotalValue = transaction.TotalValue;
+            Employee = new EmployeeListDto(transaction.Employee);
+            Customer = new CustomerListDto(transaction.Customer);
+        }
 
     }
 }

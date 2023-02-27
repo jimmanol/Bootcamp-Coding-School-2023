@@ -30,11 +30,11 @@
             colTransactionDate = new DevExpress.XtraGrid.Columns.GridColumn();
             colTransactionID = new DevExpress.XtraGrid.Columns.GridColumn();
             colTransactionsCustomerId = new DevExpress.XtraGrid.Columns.GridColumn();
+            repCustomersCard = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             colTransactionsPaymentMethod = new DevExpress.XtraGrid.Columns.GridColumn();
             colTransactionsEmployeeID = new DevExpress.XtraGrid.Columns.GridColumn();
-            colTransactionsTotalValue = new DevExpress.XtraGrid.Columns.GridColumn();
-            repCustomersCard = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             repEmployeesSurname = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            colTransactionsTotalValue = new DevExpress.XtraGrid.Columns.GridColumn();
             labelTransactions = new Label();
             labelTransactionLines = new Label();
             bsTransactions = new BindingSource(components);
@@ -44,6 +44,7 @@
             colTranLineID = new DevExpress.XtraGrid.Columns.GridColumn();
             colTranLineTransactionID = new DevExpress.XtraGrid.Columns.GridColumn();
             colTranLineItemID = new DevExpress.XtraGrid.Columns.GridColumn();
+            repItemsDescription = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             colTranLineQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             colTranLineItemPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colTranLineNetValue = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)bsTransactionLines).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grdTransactionLines).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repItemsDescription).BeginInit();
             SuspendLayout();
             // 
             // btnSaveTranLines
@@ -71,6 +73,7 @@
             btnSaveTranLines.TabIndex = 7;
             btnSaveTranLines.Text = "Save";
             btnSaveTranLines.UseVisualStyleBackColor = true;
+            btnSaveTranLines.Click += btnSaveTranLines_Click;
             // 
             // grdTransactions
             // 
@@ -113,6 +116,12 @@
             colTransactionsCustomerId.Visible = true;
             colTransactionsCustomerId.VisibleIndex = 0;
             // 
+            // repCustomersCard
+            // 
+            repCustomersCard.AutoHeight = false;
+            repCustomersCard.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repCustomersCard.Name = "repCustomersCard";
+            // 
             // colTransactionsPaymentMethod
             // 
             colTransactionsPaymentMethod.Caption = "Payment Method";
@@ -130,6 +139,12 @@
             colTransactionsEmployeeID.Visible = true;
             colTransactionsEmployeeID.VisibleIndex = 3;
             // 
+            // repEmployeesSurname
+            // 
+            repEmployeesSurname.AutoHeight = false;
+            repEmployeesSurname.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repEmployeesSurname.Name = "repEmployeesSurname";
+            // 
             // colTransactionsTotalValue
             // 
             colTransactionsTotalValue.Caption = "Total Value";
@@ -137,18 +152,6 @@
             colTransactionsTotalValue.Name = "colTransactionsTotalValue";
             colTransactionsTotalValue.Visible = true;
             colTransactionsTotalValue.VisibleIndex = 4;
-            // 
-            // repCustomersCard
-            // 
-            repCustomersCard.AutoHeight = false;
-            repCustomersCard.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repCustomersCard.Name = "repCustomersCard";
-            // 
-            // repEmployeesSurname
-            // 
-            repEmployeesSurname.AutoHeight = false;
-            repEmployeesSurname.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repEmployeesSurname.Name = "repEmployeesSurname";
             // 
             // labelTransactions
             // 
@@ -175,6 +178,7 @@
             grdTransactionLines.Location = new Point(12, 291);
             grdTransactionLines.MainView = gridView2;
             grdTransactionLines.Name = "grdTransactionLines";
+            grdTransactionLines.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repItemsDescription });
             grdTransactionLines.Size = new Size(776, 191);
             grdTransactionLines.TabIndex = 9;
             grdTransactionLines.UseEmbeddedNavigator = true;
@@ -195,17 +199,24 @@
             // 
             // colTranLineTransactionID
             // 
-            colTranLineTransactionID.Caption = "TransactionID";
+            colTranLineTransactionID.Caption = "Transaction ID";
             colTranLineTransactionID.FieldName = "TransactionID";
             colTranLineTransactionID.Name = "colTranLineTransactionID";
             // 
             // colTranLineItemID
             // 
             colTranLineItemID.Caption = "Item";
+            colTranLineItemID.ColumnEdit = repItemsDescription;
             colTranLineItemID.FieldName = "ItemID";
             colTranLineItemID.Name = "colTranLineItemID";
             colTranLineItemID.Visible = true;
             colTranLineItemID.VisibleIndex = 0;
+            // 
+            // repItemsDescription
+            // 
+            repItemsDescription.AutoHeight = false;
+            repItemsDescription.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repItemsDescription.Name = "repItemsDescription";
             // 
             // colTranLineQuantity
             // 
@@ -226,7 +237,7 @@
             // colTranLineNetValue
             // 
             colTranLineNetValue.Caption = "Net Value";
-            colTranLineNetValue.FieldName = "Net Value";
+            colTranLineNetValue.FieldName = "NetValue";
             colTranLineNetValue.Name = "colTranLineNetValue";
             colTranLineNetValue.Visible = true;
             colTranLineNetValue.VisibleIndex = 3;
@@ -285,6 +296,7 @@
             btnDeleteTranLines.TabIndex = 13;
             btnDeleteTranLines.Text = "Delete";
             btnDeleteTranLines.UseVisualStyleBackColor = true;
+            btnDeleteTranLines.Click += btnDeleteTranLines_Click;
             // 
             // TransactionsForm
             // 
@@ -311,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)bsTransactionLines).EndInit();
             ((System.ComponentModel.ISupportInitialize)grdTransactionLines).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repItemsDescription).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -346,5 +359,6 @@
         private Button btnDeleteTranLines;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repCustomersCard;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repEmployeesSurname;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repItemsDescription;
     }
 }
