@@ -1,4 +1,4 @@
-﻿@page "/customers/edit/{id:guid?}"
+﻿@page "/customerList/edit/{id:guid?}"
 @using FuelStation.Web.Blazor.Shared;
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
@@ -52,7 +52,7 @@ else{
     }
 
     private void OnCancel() {
-        navigationManager.NavigateTo("customers");
+        navigationManager.NavigateTo("customerList");
     }
 
     private async Task OnSave() {
@@ -64,6 +64,6 @@ else{
             response = await httpClient.PutAsJsonAsync("customer", customer);
         }
         response.EnsureSuccessStatusCode();
-        navigationManager.NavigateTo("customers");
+        navigationManager.NavigateTo("customerList");
     }
 }

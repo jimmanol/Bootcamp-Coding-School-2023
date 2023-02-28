@@ -1,35 +1,48 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page" >
-    <div style="display: flex; flex-direction: column; align-items: center;" hidden= "@i">
-        <h1>Welcome!</h1>
-        <br />
-        <br />
-        <br />
-        <h5>Login as:...</h5>
-        <div style="display: flex; flex-direction: row; justify-content: center;">
-            <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white;" @onclick="(e) => ButtonClicked(e, 'c')">Cashier</button>
-            <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white;" @onclick="(e) => ButtonClicked(e, 's')">Staff</button>
-            <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white;" @onclick="(e) => ButtonClicked(e, 'm')">Manager</button>
+<div class="page">
+    
+        <div style="display: flex; flex-direction: column; align-items: center;" hidden="@i">
+            <h1>Welcome to our Fuel Station!</h1>
+            <br />
+            <br />
+            <br />
+            <h4>Login as: ...</h4>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white; font-family: 'Courier New', monospace;" @onclick="(e) => ButtonClicked(e, 'c')">Cashier</button>
+                <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white; font-family: 'Courier New', monospace;" @onclick="(e) => ButtonClicked(e, 's')">Staff</button>
+                <button style="width: 200px; height: 200px; border: 2px solid black; border-radius: 10px; margin: 10px; background-color: white; font-family: 'Courier New', monospace;" @onclick="(e) => ButtonClicked(e, 'm')">Manager</button>
+            </div>
         </div>
-    </div>
+     
     @if (i) {
-        
-    <div class="sidebar">
-        <NavMenu person="@person" />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="sidebar">
+            <NavMenu person="@person" />
         </div>
+        <main>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
     }
-</div>
+    
+ </div>
+    <style>
+
+        h1{   
+            font-family: 'Courier New', monospace;
+        }
+
+        h4{
+            font-family: 'Courier New', monospace;
+        }
+
+        
+
+      
+    </style>
 
 @code {
     public bool i = false;

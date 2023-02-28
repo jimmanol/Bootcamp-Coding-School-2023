@@ -29,7 +29,7 @@ namespace FuelStation.Web.Blazor.Shared {
         public Guid EmployeeId { get; set; }
         public Employee? Employee { get; set; } = null!;
 
-        public List<TransactionLineEditDto>? TransactionLines { get; set; } = new(); //List<TransactionLineEditDto>();
+        public List<TransactionLineEditDto>? TransactionLines { get; set; } = new(); 
 
 
         // ctors

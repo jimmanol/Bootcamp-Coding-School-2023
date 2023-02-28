@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Model", "FuelSt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.EF", "FuelStation.EF\FuelStation.EF.csproj", "{7C2B6111-D902-4160-816C-EA7E452001B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Win", "FuelStation.Win\FuelStation.Win.csproj", "{B2E0A354-CB33-4E49-A85D-D16EF14ADC34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Win", "FuelStation.Win\FuelStation.Win.csproj", "{B2E0A354-CB33-4E49-A85D-D16EF14ADC34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

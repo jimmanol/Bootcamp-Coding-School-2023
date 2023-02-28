@@ -1,0 +1,48 @@
+﻿@page "/monthlyLedger"
+@using FuelStation.Web.Blazor.Shared;
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Monthly Ledger</h3>
+
+@if (isLoading) {
+	<p>Loading ... </p>
+} else {
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Year</th>
+					<th>Month</th>
+					<th>Income</th>
+					<th>Expenses</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+			@foreach (var ledger in monthlyledger) {
+						<tr>
+					<td>@ledger.Year</td>
+					<td>@ledger.Month</td>
+					<td>@ledger.Income €</td>
+					<td>@ledger.Expenses €</td>
+					<td>@ledger.Total €</td>
+						</tr>
+			}
+			</tbody>
+		</table>
+}
+
+
+@code {
+	List<MonthlyLedgerDto> monthlyledger = new List<MonthlyLedgerDto>();
+	private List<EmployeeListDto> Employees = new();
+	private List<ItemListDto> Items = new();
+	private List<TransactionListDto> Transactions = new();
+    bool isLoading { get; set; } = true;
+
+	//private async Task LoadItemsFromServer() {
+	//	Transactions = await httpClient.GetFromJsonAsync<List<TransactionListDto>>("transaction");
+	//	Employees = await httpClient.GetFromJsonAsync<List<EmployeeListDto>>("employee");
+	//	Items = await httpClient.GetFromJsonAsync<List<ItemListDto>>("item");
+	//}
+}
