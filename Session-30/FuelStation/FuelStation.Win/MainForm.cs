@@ -30,8 +30,8 @@ namespace FuelStation.Win {
         }
 
         private void btnTransactions_Click(object sender, EventArgs e) {
-            TransactionsForm tranForm = new TransactionsForm();
-            tranForm.ShowDialog();
+            CardSearchForm cardSearchForm = new CardSearchForm();
+            cardSearchForm.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e) {

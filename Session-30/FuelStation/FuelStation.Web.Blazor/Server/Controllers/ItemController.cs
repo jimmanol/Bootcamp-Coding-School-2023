@@ -56,6 +56,7 @@ namespace FuelStation.Blazor.Web.Server.Controllers {
             _itemRepo.Delete(id);
         }
 
+        [HttpPut]
         public async Task Put(ItemEditDto item) {
             var itemToUpdate = _itemRepo.GetById(item.Id);
             itemToUpdate.Code = item.Code;

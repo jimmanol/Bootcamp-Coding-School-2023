@@ -11,11 +11,18 @@ namespace FuelStation.Web.Blazor.Shared {
     public class EmployeeEditDto {
         public Guid Id { get; set; }
         [Required]
+        [StringLength(20, MinimumLength = 1)]
         public string? Name { get; set; }
+
         [Required]
+        [StringLength(20, MinimumLength = 1)]
         public string? Surname { get; set; }
+
         [Required]
+        
         public DateTime HireDateStart { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? HireDateEnd { get; set; }
         [Required]
         public decimal SalaryPerMonth { get; set; }

@@ -12,8 +12,20 @@
     <p>Loading ... </p>
 }
 else {
-
+    <br />
+    <br />
+    <EditForm Model="employee" OnValidSubmit="OnSave">
+     <DataAnnotationsValidator />
+     <ValidationSummary />
     <div class="row">
+        <div class="col-md-6">
+            <label for="date-input">Hire Date Start:</label>
+            <InputDate id="date-input" @bind-Value="@employee.HireDateStart" />
+        </div>
+        <div class="col-md-6">
+            <label for="date-input">Hire Date End</label>
+            <InputDate id="date-input" @bind-Value="@employee.HireDateEnd" />
+        </div>
         <div class="col-md-6">
             <label class="form-label">Name</label>
             <input class="form-control" @bind="@employee.Name" />
@@ -23,14 +35,6 @@ else {
             <input class="form-control" @bind="@employee.Surname" />
         </div>
         <div class="col-md-6">
-            <label class="form-label">Hire Date Start</label>
-            <input class="form-control" @bind="@employee.HireDateStart" />
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Hire Date End</label>
-            <input class="form-control" @bind="@employee.HireDateEnd" />
-        </div>
-        <div class="col-md-6">
             <label class="form-label">Salary Per Month</label>
             <input class="form-control" @bind="@employee.SalaryPerMonth" />
         </div>
@@ -38,7 +42,7 @@ else {
             <label class="form-label">Employee Type</label>
             <select class="form-control" @bind="@employee.EmployeeType">
             @foreach (var enumValue in Enum.GetValues<EmployeeType>()){
-            <option value="@enumValue">@enumValue</option>
+                <option value="@enumValue">@enumValue</option>
             }
             </select>
         </div>
@@ -49,6 +53,7 @@ else {
             <button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
         </div>
     </div>
+    </EditForm>
 }
 
 

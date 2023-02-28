@@ -15,8 +15,12 @@ namespace FuelStation.Web.Blazor.Shared {
         public string Name { get; set; } = null!;
         [Required]
         public string Surname { get; set; } = null!;
+
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime HireDateStart { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? HireDateEnd { get; set; }
         [Required]
         public decimal SalaryPerMonth { get; set; }

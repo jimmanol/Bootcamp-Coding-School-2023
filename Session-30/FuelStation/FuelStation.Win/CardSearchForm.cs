@@ -20,5 +20,15 @@ namespace FuelStation.Win {
             txtCardNumber.Enabled = true;
             btnSearch.Enabled = true;
         }
+
+        private void btnSkip_Click(object sender, EventArgs e) {
+            TransactionsForm transactionsForm = new TransactionsForm();
+            transactionsForm.ShowDialog();
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e) {
+            CustomersForm customersForm = new CustomersForm();
+            customersForm.ShowDialog();
+        }
     }
 }

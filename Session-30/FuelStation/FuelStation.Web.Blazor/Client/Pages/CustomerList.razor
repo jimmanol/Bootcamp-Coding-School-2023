@@ -1,4 +1,4 @@
-﻿@page "/customers"
+﻿@page "/customerList"
 @inject HttpClient httpClient
 @inject NavigationManager navigationManager
 @inject IJSRuntime jsRuntime
@@ -52,11 +52,11 @@ else{
     }
 
     private async Task AddNewCustomer() {
-        navigationManager.NavigateTo("/customers/edit");
+        navigationManager.NavigateTo("/customerList/edit");
     }
 
     private async Task EditCustomer(CustomerListDto customer) {
-        navigationManager.NavigateTo($"/customers/edit/{customer.ID}");
+        navigationManager.NavigateTo($"/customerList/edit/{customer.ID}");
     }
 
     private async Task DeleteCustomer(CustomerListDto customer) {
