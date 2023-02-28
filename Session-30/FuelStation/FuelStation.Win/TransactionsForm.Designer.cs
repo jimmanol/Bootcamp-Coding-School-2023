@@ -196,21 +196,25 @@
             colTranLineID.Caption = "ID";
             colTranLineID.FieldName = "ID";
             colTranLineID.Name = "colTranLineID";
+            colTranLineID.Visible = true;
+            colTranLineID.VisibleIndex = 0;
             // 
             // colTranLineTransactionID
             // 
             colTranLineTransactionID.Caption = "Transaction ID";
-            colTranLineTransactionID.FieldName = "TransactionID";
+            colTranLineTransactionID.FieldName = "TransactionId";
             colTranLineTransactionID.Name = "colTranLineTransactionID";
+            colTranLineTransactionID.Visible = true;
+            colTranLineTransactionID.VisibleIndex = 1;
             // 
             // colTranLineItemID
             // 
             colTranLineItemID.Caption = "Item";
             colTranLineItemID.ColumnEdit = repItemsDescription;
-            colTranLineItemID.FieldName = "ItemID";
+            colTranLineItemID.FieldName = "ItemId";
             colTranLineItemID.Name = "colTranLineItemID";
             colTranLineItemID.Visible = true;
-            colTranLineItemID.VisibleIndex = 0;
+            colTranLineItemID.VisibleIndex = 2;
             // 
             // repItemsDescription
             // 
@@ -224,7 +228,7 @@
             colTranLineQuantity.FieldName = "Quantity";
             colTranLineQuantity.Name = "colTranLineQuantity";
             colTranLineQuantity.Visible = true;
-            colTranLineQuantity.VisibleIndex = 1;
+            colTranLineQuantity.VisibleIndex = 3;
             // 
             // colTranLineItemPrice
             // 
@@ -232,7 +236,7 @@
             colTranLineItemPrice.FieldName = "ItemPrice";
             colTranLineItemPrice.Name = "colTranLineItemPrice";
             colTranLineItemPrice.Visible = true;
-            colTranLineItemPrice.VisibleIndex = 2;
+            colTranLineItemPrice.VisibleIndex = 4;
             // 
             // colTranLineNetValue
             // 
@@ -240,7 +244,7 @@
             colTranLineNetValue.FieldName = "NetValue";
             colTranLineNetValue.Name = "colTranLineNetValue";
             colTranLineNetValue.Visible = true;
-            colTranLineNetValue.VisibleIndex = 3;
+            colTranLineNetValue.VisibleIndex = 5;
             // 
             // colTranLineDiscountValue
             // 
@@ -248,7 +252,7 @@
             colTranLineDiscountValue.FieldName = "DiscountValue";
             colTranLineDiscountValue.Name = "colTranLineDiscountValue";
             colTranLineDiscountValue.Visible = true;
-            colTranLineDiscountValue.VisibleIndex = 4;
+            colTranLineDiscountValue.VisibleIndex = 6;
             // 
             // colTranLineTotalValue
             // 
@@ -256,7 +260,7 @@
             colTranLineTotalValue.FieldName = "TotalValue";
             colTranLineTotalValue.Name = "colTranLineTotalValue";
             colTranLineTotalValue.Visible = true;
-            colTranLineTotalValue.VisibleIndex = 5;
+            colTranLineTotalValue.VisibleIndex = 7;
             // 
             // btnClose
             // 

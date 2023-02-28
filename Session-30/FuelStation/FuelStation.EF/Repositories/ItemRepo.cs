@@ -25,6 +25,7 @@ namespace FuelStation.EF.Repositories {
                 .SingleOrDefault();
         }
 
+        
         public void Add(Item entity) {
             using var context = new FuelStationDbContext();
             context.Add(entity);
@@ -39,6 +40,8 @@ namespace FuelStation.EF.Repositories {
                 .SingleOrDefault();
             if (ItemDb is null) 
                 throw new Exception($"Given id '{ID}' was not found");
+            if (ItemDb.ID == entity.ID)
+                throw new Exception($"Given id '{ID}' already exists");
             ItemDb.Description = entity.Description;
             ItemDb.Code = entity.Code;
             ItemDb.Price = entity.Price;

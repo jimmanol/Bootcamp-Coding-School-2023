@@ -4,13 +4,14 @@
 @inject IJSRuntime jsRuntime
 @using FuelStation.Web.Blazor.Shared;
 
+
 <h3>Employee List</h3>
 
 @if (isLoading) {
     <p>Loading ...</p>
 }
 else {
-
+    <br />
     <button class="btn btn-primary" @onclick="AddNewEmployee">Add Employee </button>
     <table class="table table-striped table-hover">
         <thead>
@@ -32,28 +33,34 @@ else {
                 <tr>
                     <td>@employee.Name</td>
                     <td>@employee.Surname</td>
-                    <td>@employee.HireDateStart</td>
-                    <td>@employee.HireDateEnd</td>
+                    <td>@employee.HireDateStart.ToString("yyyy-MM-dd")</td>
+                    @if (employee.HireDateEnd.HasValue) {
+                        <td>@employee.HireDateEnd?.ToString("yyyy-MM-dd")</td>
+                    }
+                    else {
+                        <td>@employee.HireDateEnd</td>
+                    }
                     <td>@employee.SalaryPerMonth</td>
                     <td>@employee.EmployeeType</td>
-
                     <td>
                         <button class="btn btn-primary" @onclick="()=>EditItem(employee)">Edit </button>
                         <button class="btn btn-danger" @onclick="()=> DeleteItem(employee)">Delete </button>
 
                     </td>
-
                 </tr>
             }
 
-
         </tbody>
-
-
 
     </table>
 
 }
+
+
+
+
+                        
+
 
 @code {
     private List<EmployeeListDto> employeeList = new();

@@ -1,5 +1,6 @@
 ﻿using DevExpress.DataAccess.Native.Sql;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using FuelStation.EF.Repositories;
 using FuelStation.Model;
 using FuelStation.Web.Blazor.Shared;
@@ -39,9 +40,9 @@ namespace FuelStation.Win {
             if (transactions != null) {
                 bsTransactions.DataSource = transactions;
                 grdTransactions.DataSource = bsTransactions;
-                bsTransactionLines.DataSource = bsTransactions;
-                bsTransactionLines.DataMember = "TransactionLines";
-                grdTransactionLines.DataSource = bsTransactionLines;
+                //bsTransactionLines.DataSource = bsTransactions;
+                grdTransactionLines.DataSource = bsTransactions;
+                grdTransactionLines.DataMember = "TransactionLines";
             }
             SetLookUpEdit(repCustomersCard, customers, "CardNumber", "ID");
             SetLookUpEdit(repEmployeesSurname, employees, "Surname", "Id");
@@ -53,6 +54,11 @@ namespace FuelStation.Win {
             rep.DataSource = list;
             rep.DisplayMember = displayMembers;
             rep.ValueMember = valueMember;
+        }
+
+        private void gridView2_InitNewRow(object sender, InitNewRowEventArgs e) {
+            GridView view = sender as GridView;
+            view.SetRowCellValue(e.RowHandle, "TransactionID", gridView1.GetRowCellValue(gridView1.GetSelectedRows()[0], "ID"));
         }
 
         //get transactions
@@ -218,7 +224,10 @@ namespace FuelStation.Win {
         }
         private void btnDeleteTransaction_Click(object sender, EventArgs e) {
             TransactionEditDto transaction = (TransactionEditDto)bsTransactions.Current;
-            DeleteTransaction(transaction);
+            DialogResult result = MessageBox.Show("Deleting this Transaction will result in all its Transaction Lines being deleted as well!", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes) {
+                DeleteTransaction(transaction);
+            }
         }
 
 

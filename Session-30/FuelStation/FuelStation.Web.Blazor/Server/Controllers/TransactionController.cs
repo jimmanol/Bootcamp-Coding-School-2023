@@ -62,6 +62,7 @@ namespace FuelStation.Web.Blazor.Server.Controllers {
         public async Task Put(TransactionEditDto transaction) {
             var itemToUpdate = _transactionRepo.GetById(transaction.Id);
             itemToUpdate.PaymentMethod = transaction.PaymentMethod;
+            itemToUpdate.Date = transaction.Date; // normally it shouldnt be able to change, should always be datetime.now after initialization.
             itemToUpdate.TotalValue = transaction.TotalValue;
             itemToUpdate.EmployeeID = transaction.EmployeeId;
             itemToUpdate.CustomerID = transaction.CustomerId;
